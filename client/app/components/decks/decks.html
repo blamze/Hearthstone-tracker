@@ -1,0 +1,118 @@
+<navbar></navbar>
+<h1>Edit-add-delete hearthstone decks</h1>
+<section>
+  <div class="container">
+    <h2>Choose tab</h2>
+    <ul class="nav nav-pills">
+      <li class="active"><a data-toggle="pill" href="#view">Decks</a></li>
+      <li><a data-toggle="pill" href="#viewbyclass">Decks by class</a></li>
+      <li><a data-toggle="pill" href="#add">Add new deck</a></li>
+      <li><a data-toggle="pill" href="#edit">Edit deck</a></li>
+      <li><a data-toggle="pill" href="#delete">Delete deck</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="view" class="tab-pane fade in active">
+        <div ng-repeat="deck in $ctrl.decks">
+          <h3> Deck: {{deck.id}} {{deck.name}} for {{deck.class}} <img ng-src="{{deck.classimg}}" alt=""> <a ng-show="{{deck.url}}" href="{{deck.url}}">Deck url</a></h3>
+        </div>
+      </div>
+
+      <div id="viewbyclass" class="tab-pane fade">
+        <form name="findForm">
+        <select
+          name="findClassInput"
+          class="sm form-control"
+          ng-options="class.id as class.name for class in $ctrl.classes"
+          ng-model="find.classid" placeholder="Select Class" ng-click="$ctrl.findDeck(find)" required>
+          <option value="">- Select class -</option>
+        </select>
+          <input class="btn btn-default"
+                 type="submit"
+                 ng-click="$ctrl.findDeck(find)" value="Filter"/>
+          </form>
+        <div ng-repeat="deck in $ctrl.decksById">
+          <h3> Deck: {{deck.id}} {{deck.name}} for {{deck.class}} <img ng-src="{{deck.classimg}}" alt=""> <a ng-show="{{deck.url}}" href="{{deck.url}}">Deck url</a></h3>
+        </div>
+      </div>
+
+      <div id="add" class="tab-pane fade">
+        <h1>Add new deck</h1>
+        <div class="form-group col-sm-6">
+          <form name="addForm">
+            <select
+              name="addClassInput"
+              class="sm form-control"
+              ng-options="class.id as class.name for class in $ctrl.classes"
+              ng-model="add.classid" placeholder="Select Class" required>
+              <option value="">- Select class -</option>
+            </select>
+            <p ng-hide="addForm.addClassInput.$valid">Class is required.</p>
+            <label>Deck name:</label>
+            <input name="addNameInput" class="form-control" type="text" ng-model="add.name" required>
+            <p ng-hide="addForm.addNameInput.$valid">Deck name is required.</p>
+            <label>Deck url:</label>
+            <input name="addUrlInput" class="form-control" type="text" ng-model="add.url">
+            <input class="btn btn-default" ng-disabled="!addForm.addClassInput.$valid && !addForm.addImgInput.$valid"
+                   type="submit"
+                   ng-click="$ctrl.saveDeck(add)" value="Add"/>
+          </form>
+        </div>
+      </div>
+
+      <div id="edit" class="tab-pane fade">
+        <h1>Edit deck</h1>
+        <div class="form-group col-sm-6">
+          <form name="editForm">
+            <select
+              name="editDeckInput"
+              class="sm form-control"
+              ng-options="deck.id as deck.name for deck in $ctrl.decks"
+              ng-model="edit.id" placeholder="Select deck" required>
+              <option value="">- Select deck -</option>
+            </select>
+            <p ng-hide="editForm.editDeckInput.$valid">Deck is required.</p>
+            <select
+              name="editClassInput"
+              class="sm form-control"
+              ng-options="class.id as class.name for class in $ctrl.classes"
+              ng-model="edit.classid" placeholder="Select Class" required>
+              <option value="">- Select class -</option>
+            </select>
+            <p ng-hide="editForm.editClassInput.$valid">Class is required.</p>
+            <label>Deck name:</label>
+            <input name="editNameInput" class="form-control" type="text" ng-model="edit.name" required>
+            <p ng-hide="editForm.editNameInput.$valid">Deck name is required.</p>
+            <label>Deck url:</label>
+            <input name="editUrlInput" class="form-control" type="text" ng-model="edit.url">
+            <input class="btn btn-default" ng-disabled="!editForm.editClassInput.$valid && !editForm.editNameInput.$valid && !editForm.editDeckInput.$valid"
+                   type="submit"
+                   ng-click="$ctrl.editDeck(edit)" value="Edit"/>
+          </form>
+        </div>
+      </div>
+
+      <div id="delete" class="tab-pane fade">
+        <h1>Delete class</h1>
+        <div class="form-group col-sm-6">
+          <form name="deleteForm">
+            <select
+              name="deleteDeckInput"
+              class="sm form-control"
+              ng-options="deck.id as deck.name for deck in $ctrl.decks"
+              ng-model="delete.id" placeholder="Select deck" required>
+              <option value="">- Select deck -</option>
+            </select>
+            <p ng-hide="deleteForm.deleteDeckInput.$valid">Deck is required.</p>
+            <input class="btn btn-default" ng-disabled="!deleteForm.deleteDeckInput.$valid" type="submit"
+                   ng-click="$ctrl.deleteDeck(delete)"
+                   value="Delete"/>
+          </form>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

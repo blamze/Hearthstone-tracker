@@ -5,11 +5,14 @@
   "main": "index.js",
   "dependencies": {
     "angular": "^1.5.0",
+    "angular-chart.js": "^1.0.3",
     "angular-ui-router": "^1.0.0-beta.1",
     "jquery": "^3.1.1",
     "normalize.css": "^3.0.3"
   },
   "devDependencies": {
+    "jquery": "^3.1.1",
+    "angular-chart.js": "^1.0.3",
     "angular-mocks": "^1.5.0",
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",

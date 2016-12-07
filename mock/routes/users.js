@@ -3,7 +3,7 @@ var pgp = require('pg-promise')();
 var dbConfig = {
     host: 'localhost',
     port: 5432,
-    database: 'booking-room-system',
+    database: 'hearthstone',
     user: 'postgres',
     password: 'postgres'
 };
@@ -14,15 +14,11 @@ var router = express.Router();
 router.get('/', function (req, res) {
     db.any("SELECT " +
         "u.id, " +
-        "u.name, " +
-        "r.name as role_name, " +
-        "p.name as position_name, " +
+        "u.username, " +
         "u.email " +
         "FROM users u " +
-        "JOIN roles r on u.role = r.id " +
-        "JOIN positions p on u.position = p.id " +
         "WHERE isdeleted=false " +
-        "ORDER BY name ASC", [])
+        "ORDER BY id ASC", [])
         .then(function (data) {
             // console.log(data);
             res.status(200).send({data: data});
@@ -39,19 +35,21 @@ router.get('/', function (req, res) {
 router.post('/', function(req, res){
     var data = req.body;
 
-    if(data && data.username !== '' && data.password !== '') {
+  console.log(data);
 
-        db.one("INSERT INTO users (username, password, role, name, position, email) " +
-                "VALUES ($1, $2, $3, $4, $5, $6) " +
-                "RETURNING id", [data.username, data.password, data.role, data.name, data.position, data.email])
+    if(data.username !== '' && data.password !== '' && data.email !== '') {
+
+        db.one("INSERT INTO users (username, password, email) " +
+                "VALUES ($1, $2, $3) " +
+                "RETURNING id", [data.username, data.password, data.email])
             .then(function (data) {
                 // console.log(data);
-                if(_.isString(data)){
-                    res.status(500).send(data);
-                }
-                else {
+                // if(_.isString(data)){
+                //     res.status(500).send(data);
+                // }
+                // else {
                     res.status(200).send({id: data.id});
-                }
+                // }
                 // success;
             })
             .catch(function (error) {
@@ -62,36 +60,36 @@ router.post('/', function(req, res){
 
     }
     else{
-        res.status(500).send("Username or password is empty");
+        res.status(500).send("Username, email or password is empty");
     }
 
 });
 
 // Update user
-router.put('/', function(req, res){
-    var data = req.body;
-
-    if(data && data.id !== undefined && data.username !== '' && data.password !== '') {
-
-        db.none("UPDATE users " +
-                "SET username=$1, password=$2, role=$3, name=$4, position=$5, email=$6 WHERE id=$7", [data.username, data.password, data.role, data.name, data.position, data.email, data.id])
-            .then(function (data) {
-                // console.log(data);
-                res.sendStatus(200);
-                // success;
-            })
-            .catch(function (error) {
-                // console.log(error);
-                res.status(500).send(error.message);
-                // error;
-            });
-
-    }
-    else{
-        res.status(500).send("No ID provided");
-    }
-
-});
+// router.put('/', function(req, res){
+//     var data = req.body;
+//
+//     if(data && data.id !== undefined && data.username !== '' && data.password !== '') {
+//
+//         db.none("UPDATE users " +
+//                 "SET username=$1, password=$2, role=$3, name=$4, position=$5, email=$6 WHERE id=$7", [data.username, data.password, data.role, data.name, data.position, data.email, data.id])
+//             .then(function (data) {
+//                 // console.log(data);
+//                 res.sendStatus(200);
+//                 // success;
+//             })
+//             .catch(function (error) {
+//                 // console.log(error);
+//                 res.status(500).send(error.message);
+//                 // error;
+//             });
+//
+//     }
+//     else{
+//         res.status(500).send("No ID provided");
+//     }
+//
+// });
 
 // Delete user
 router.delete('/', function(req, res){

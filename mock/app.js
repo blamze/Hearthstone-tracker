@@ -4,16 +4,14 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 var users = require('./routes/users');
-var booking = require('./routes/booking');
 var login = require('./routes/login');
-var rmng = require('./routes/rmng');
-var utils = require('./routes/utils');
-var roomBooking = require('./routes/room_booking');
-var tabletTimeline = require('./routes/tabletTimeline');
 
 
 var classes = require('./routes/classes');
+var decks = require('./routes/decks');
 var matches = require('./routes/matches');
+
+var stormpath = require('express-stormpath');
 
 
 var app = express();
@@ -35,15 +33,11 @@ app.use(function (req, res, next) {
 });
 
 app.use('/api/users', users);
-app.use('/api/booking', booking);
 app.use('/api/login', login);
-app.use('/api/rmng', rmng);
-app.use('/api/utils', utils);
-app.use('/api/room-booking', roomBooking);
-app.use('/api/tabletTimeline', tabletTimeline);
 
 app.use('/api/classes', classes);
 app.use('/api/matches', matches);
+app.use('/api/decks', decks);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -75,5 +69,33 @@ app.use(function (err, req, res, next) {
         error: {}
     });
 });
+
+
+app.set('trust proxy',true);
+
+app.use('/',express.static(path.join(__dirname, '..', 'client'),{ redirect: false }));
+
+app.use(stormpath.init(app, {
+  web: {
+    spa: {
+      enabled: true,
+      view: path.join(__dirname, '..', 'client','index.html')
+    },
+    me: {
+      expand: {
+        customData: true,
+        groups: true
+      }
+    }
+  }
+}));
+
+app.route('/*')
+  .get(function(req, res) {
+    res.sendFile(path.join(__dirname, '..', 'client','index.html'));
+  });
+
+app.post('/profile', bodyParser.json(), stormpath.loginRequired, require('./routes/profile'));
+
 
 module.exports = app;

@@ -14,9 +14,38 @@ var router = express.Router();
 router.get('/', function (req, res) {
   db.any("SELECT * FROM classes", [])
     .then(function (data) {
-      // console.log(data);
       res.status(200).send({data: data});
       // success;
+    })
+    .catch(function (error) {
+      res.status(500).send(error.message);
+      // error;
+    });
+});
+
+// // Insert class
+router.post('/new', function (req, res) {
+  var data = req.body;
+
+  db.one("INSERT INTO classes (name, img) VALUES ($1, $2) RETURNING *", [data.name, data.img])
+    .then(function (data) {
+      res.status(200).send("ok");
+      // success;
+    })
+    .catch(function (error) {
+      res.status(500).send(error.message);
+      // error;
+    });
+});
+
+// // Update class
+router.put('/edit', function (req, res) {
+  var data = req.body;
+
+  db.none("UPDATE classes SET name=$1, img=$2 WHERE id=$3", [data.name, data.img, data.id])
+    .then(function (data) {
+      // success;
+      res.status(200).send("ok");
     })
     .catch(function (error) {
       // console.log(error);
@@ -24,89 +53,23 @@ router.get('/', function (req, res) {
       // error;
     });
 });
-//
-// // Insert user
-// router.post('/', function(req, res){
-//   var data = req.body;
-//
-//   if(data && data.username !== '' && data.password !== '') {
-//
-//     db.one("INSERT INTO users (username, password, role, name, position, email) " +
-//       "VALUES ($1, $2, $3, $4, $5, $6) " +
-//       "RETURNING id", [data.username, data.password, data.role, data.name, data.position, data.email])
-//       .then(function (data) {
-//         // console.log(data);
-//         if(_.isString(data)){
-//           res.status(500).send(data);
-//         }
-//         else {
-//           res.status(200).send({id: data.id});
-//         }
-//         // success;
-//       })
-//       .catch(function (error) {
-//         // console.log(error);
-//         res.status(500).send(error.message);
-//         // error;
-//       });
-//
-//   }
-//   else{
-//     res.status(500).send("Username or password is empty");
-//   }
-//
-// });
-//
-// // Update user
-// router.put('/', function(req, res){
-//   var data = req.body;
-//
-//   if(data && data.id !== undefined && data.username !== '' && data.password !== '') {
-//
-//     db.none("UPDATE users " +
-//       "SET username=$1, password=$2, role=$3, name=$4, position=$5, email=$6 WHERE id=$7", [data.username, data.password, data.role, data.name, data.position, data.email, data.id])
-//       .then(function (data) {
-//         // console.log(data);
-//         res.sendStatus(200);
-//         // success;
-//       })
-//       .catch(function (error) {
-//         // console.log(error);
-//         res.status(500).send(error.message);
-//         // error;
-//       });
-//
-//   }
-//   else{
-//     res.status(500).send("No ID provided");
-//   }
-//
-// });
-//
-// // Delete user
-// router.delete('/', function(req, res){
-//   var data = req.body;
-//
-//   if(data && data.id !== undefined) {
-//
-//     db.none("UPDATE users " +
-//       "SET isdeleted=true WHERE id=$1", [data.id])
-//       .then(function (data) {
-//         // console.log(data);
-//         res.sendStatus(200);
-//         // success;
-//       })
-//       .catch(function (error) {
-//         // console.log(error);
-//         res.status(500).send(error.message);
-//         // error;
-//       });
-//
-//   }
-//   else{
-//     res.status(500).send("No ID provided");
-//   }
-//
-// });
+
+// // Delete class
+router.delete('/delete', function (req, res) {
+    var data = req.body;
+
+    db.none("DELETE FROM classes WHERE id=($1)", [data.id])
+      .then(function (data) {
+        res.status(200).send("ok");
+        // success;
+      })
+      .catch(function (error) {
+        // res.status(500).send(error.message);
+        res.status(500).send(error.message);
+        // error;
+      });
+  }
+
+);
 
 module.exports = router;
