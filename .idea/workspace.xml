@@ -1,49 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b1e08ae-6cdf-4bd5-9f14-ba44a7668156" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/angular-csp.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/angular.min.js.gzip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/angular.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/angular/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/.gitmodules" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/TROUBLESHOOTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/protractor.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/test/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/bower_components/stormpath-sdk-angularjs/test/protractor/login.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/app.js" afterPath="$PROJECT_DIR$/client/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/common/navbar/navbar.controller.js" afterPath="$PROJECT_DIR$/client/app/common/navbar/navbar.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/decks/decks.controller.js" afterPath="$PROJECT_DIR$/client/app/components/decks/decks.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/matches/matches.controller.js" afterPath="$PROJECT_DIR$/client/app/components/matches/matches.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/matches/matches.html" afterPath="$PROJECT_DIR$/client/app/components/matches/matches.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/registration/registration.controller.js" afterPath="$PROJECT_DIR$/client/app/components/registration/registration.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/registration/registration.html" afterPath="$PROJECT_DIR$/client/app/components/registration/registration.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/providers/cardsService/cards.service.js" afterPath="$PROJECT_DIR$/client/app/providers/cardsService/cards.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/providers/loginService/login.service.js" afterPath="$PROJECT_DIR$/client/app/providers/loginService/login.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/providers/matchesService/matches.service.js" afterPath="$PROJECT_DIR$/client/app/providers/matchesService/matches.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mock/app.js" afterPath="$PROJECT_DIR$/mock/app.js" />
-    </list>
+    <list default="true" id="4b1e08ae-6cdf-4bd5-9f14-ba44a7668156" name="Default" comment="" />
     <ignored path="saityno2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -379,16 +337,16 @@
       <workItem from="1480262686410" duration="92000" />
       <workItem from="1480262894344" duration="11325000" />
       <workItem from="1481140945797" duration="22577000" />
-      <workItem from="1481186010227" duration="4795000" />
+      <workItem from="1481186010227" duration="4829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96511000" />
+    <option name="totallyTimeSpent" value="96545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2035139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
