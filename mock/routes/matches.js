@@ -58,12 +58,12 @@ router.get('/winrate', function (req, res) {
 // // Insert match
 router.post('/new', function (req, res) {
   var data = req.body;
-
+console.log(data);
   // if (data.name !== '' && data.img !== '') {
 
-  db.one("INSERT INTO matches (fclass, sclass, win) " +
-    "VALUES ($1, $2, $3) " +
-    "RETURNING *", [data.fclass, data.sclass, data.win])
+  db.one("INSERT INTO matches (fclass, sclass, win, fdeck, sdeck,date) " +
+    "VALUES ($1, $2, $3, $4, $5, $6) " +
+    "RETURNING *", [data.fclass, data.sclass, data.win,data.fdeck,data.sdeck, new Date()])
     .then(function (data) {
       res.status(200).send("ok");
       // success;

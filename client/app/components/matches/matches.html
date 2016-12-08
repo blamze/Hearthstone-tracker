@@ -27,15 +27,15 @@
                 name="addClassInputF"
                 class="sm form-control"
                 ng-options="class.id as class.name for class in $ctrl.classes"
-                ng-model="add.fclass" placeholder="Select Class" required>
+                ng-model="add.fclass" placeholder="Select Class" required ng-click="$ctrl.findDecksF(add)">
                 <option value="">- Select class -</option>
               </select>
               <select
                 name="addDeckInputF"
                 class="sm form-control"
                 ng-options="deck.id as deck.name for deck in $ctrl.deckF"
-                ng-model="add.id" placeholder="Select Deck" required>
-                <option value="">- Select class -</option>
+                ng-model="add.fdeck" placeholder="Select Deck" required>
+                <option value="">- Select Deck -</option>
               </select>
               <div class="radio">
                 <label><input ng-model="add.win" value=true type="radio" name="addWinInput" required>Won</label>
@@ -46,8 +46,15 @@
                 name="addClassInputS"
                 class="sm form-control"
                 ng-options="class.id as class.name for class in $ctrl.classes"
-                ng-model="add.sclass" placeholder="Select Class" required>
+                ng-model="add.sclass" placeholder="Select Class" required ng-click="$ctrl.findDecksS(add)">
                 <option value="">- Select class -</option>
+              </select>
+              <select
+                name="addDeckInputS"
+                class="sm form-control"
+                ng-options="deck.id as deck.name for deck in $ctrl.deckS"
+                ng-model="add.sdeck" placeholder="Select Deck" required>
+                <option value="">- Select Deck -</option>
               </select>
               <div class="radio">
                 <label><input ng-model="add.win" value=false type="radio" name="addWinInput" required>Won</label>

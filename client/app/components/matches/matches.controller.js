@@ -1,27 +1,13 @@
 class MatchesController {
-  constructor(matchesService, classesService, $scope, loginService) {
+  constructor(matchesService, classesService, $scope, loginService,decksService) {
     this.name = 'hero';
     this.matchesService = matchesService;
     this.matches;
     this.classesService = classesService;
     this.classes;
     this.loginService = loginService;
-
+    this.decksService = decksService;
     this.loginService.isSignedIn();
-
-
-    // console.log(this.User.getUser())
-    // if(true) {
-    //   this.$state.go('login');
-    // }
-
-
-    this.labels = ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"];
-
-    this.data = [
-      [65, 59, 90, 81, 56, 55, 40],
-      [28, 48, 40, 19, 96, 27, 100]
-    ];
 
     var getClasses = this.classesService.getClasses();
 // console.log(promise);
@@ -47,6 +33,31 @@ class MatchesController {
 
 
 
+  }
+  findDecksF(data) {
+    console.log(data);
+    var getDeckById = this.decksService.findDeck({classid: data.fclass});
+    getDeckById
+      .then((data) => {
+        this.deckF = data.data.data;
+        // console.log(this.decksById, " turetu buti decksbyId");
+      })
+      .catch((error) => {
+        // this.error.message = error.data;
+      });
+  }
+
+  findDecksS(data) {
+    console.log(data);
+    var getDeckById = this.decksService.findDeck({classid: data.sclass});
+    getDeckById
+      .then((data) => {
+        this.deckS = data.data.data;
+        // console.log(this.decksById, " turetu buti decksbyId");
+      })
+      .catch((error) => {
+        // this.error.message = error.data;
+      });
   }
 
   showPie(winrate) {
