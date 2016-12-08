@@ -11,9 +11,6 @@ var classes = require('./routes/classes');
 var decks = require('./routes/decks');
 var matches = require('./routes/matches');
 
-var stormpath = require('express-stormpath');
-
-
 var app = express();
 
 // view engine setup
@@ -75,27 +72,11 @@ app.set('trust proxy',true);
 
 app.use('/',express.static(path.join(__dirname, '..', 'client'),{ redirect: false }));
 
-app.use(stormpath.init(app, {
-  web: {
-    spa: {
-      enabled: true,
-      view: path.join(__dirname, '..', 'client','index.html')
-    },
-    me: {
-      expand: {
-        customData: true,
-        groups: true
-      }
-    }
-  }
-}));
 
 app.route('/*')
   .get(function(req, res) {
     res.sendFile(path.join(__dirname, '..', 'client','index.html'));
   });
-
-app.post('/profile', bodyParser.json(), stormpath.loginRequired, require('./routes/profile'));
 
 
 module.exports = app;

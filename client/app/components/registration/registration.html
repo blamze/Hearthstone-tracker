@@ -17,7 +17,7 @@
       <!-- E-mail -->
       <label class="control-label" for="email">E-mail</label>
       <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="input-xlarge" ng-model="addUser.email">
+        <input type="email" id="email" name="email" placeholder="" class="input-xlarge" ng-model="addUser.email">
         <p class="help-block">Please provide your E-mail</p>
       </div>
     </div>
@@ -27,7 +27,7 @@
       <label class="control-label" for="password">Password</label>
       <div class="controls">
         <input type="password" id="password" name="password" placeholder="" class="input-xlarge"
-               ng-model="addUser.password">
+               ng-model="addUser.password" minlength="4" >
         <p class="help-block">Password should be at least 4 characters</p>
       </div>
     </div>
@@ -37,11 +37,12 @@
       <label class="control-label" for="password_confirm">Password (Confirm)</label>
       <div class="controls">
         <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge"
-               ng-model="addUser.repPassword">
+               ng-model="addUser.repPassword" minlength="4">
         <p class="help-block">Please confirm password</p>
       </div>
     </div>
-
+    <h2 ng-show="$ctrl.error"> Password do not match!</h2>
+    <h2 ng-show="$ctrl.error2"> Something is bad! </h2>
     <div class="control-group">
       <!-- Button -->
       <div class="controls">

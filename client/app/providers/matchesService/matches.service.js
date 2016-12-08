@@ -12,7 +12,6 @@ export default class matchesService {
   }
 
   getWinrate(options) {
-    console.log(options);
     return this.http({
       method: "GET",
       url: "http://localhost:3300/api/matches/winrate",

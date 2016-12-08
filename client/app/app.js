@@ -13,10 +13,6 @@ import cardsServiceComponent from './providers/cardsService/service.js';
 import usersServiceComponent from './providers/usersService/service.js';
 import loginServiceComponent from './providers/loginService/service.js';
 
-import '../bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.js';
-// import {stormpath.templates} from '../bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.tpls.js';
-
-
 
 angular.module('app', [
     uiRouter,

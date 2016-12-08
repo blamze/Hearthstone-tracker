@@ -4,7 +4,6 @@ export default class loginService {
     this.$state = $state
     this.user = {};
     this.$window = $window;
-    console.log(this.user, 'cia turi but useris')
   }
 
   getUserInfo() {
@@ -14,22 +13,18 @@ export default class loginService {
   logOff() {
     this.$window.sessionStorage.clear();;
     this.$state.go('login');
-    console.log(this.$window.sessionStorage);
   }
 
   isSignedIn() {
-    console.log('hello');
     if(!this.$window.sessionStorage.getItem('user')) {
     // if(!this.user.isSignedIn) {
       this.$state.go('login');
     }
   }
   setUser(data){
-    console.log('ar data', data);
     if(data.data.token) {
       this.$window.sessionStorage.setItem('user', angular.toJson(data.data));
     }
-    console.log(this.$window.sessionStorage.user);
   }
 
   loginIn(user) {

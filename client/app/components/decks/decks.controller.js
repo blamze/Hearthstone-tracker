@@ -25,12 +25,10 @@ class DecksController {
       this.loginService.isSignedIn();
   }
   findDeck(data) {
-    console.log(data);
     var getDeckById = this.decksService.findDeck(data);
     getDeckById
       .then((data) => {
         this.decksById = data.data.data;
-        console.log(this.decksById, " turetu buti decksbyId");
       })
       .catch((error) => {
         // this.error.message = error.data;

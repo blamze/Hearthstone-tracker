@@ -14,41 +14,37 @@ class MatchesController {
         this.classes = data.data.data;
       })
       .catch((error) => {
-        // this.error.message = error.data;
+        this.error.message = error.data;
       });
 
     this.matchesService.getMatches().then((data) => {
       this.matches = data.data.data;
     })
       .catch((error) => {
-        // this.error.message = error.data;
+        this.error.message = error.data;
       });
 
   }
 
   findDecksF(data) {
-    console.log(data);
     var getDeckById = this.decksService.findDeck({classid: data.fclass});
     getDeckById
       .then((data) => {
         this.deckF = data.data.data;
-        // console.log(this.decksById, " turetu buti decksbyId");
       })
       .catch((error) => {
-        // this.error.message = error.data;
+        this.error.message = error.data;
       });
   }
 
   findDecksS(data) {
-    console.log(data);
     var getDeckById = this.decksService.findDeck({classid: data.sclass});
     getDeckById
       .then((data) => {
         this.deckS = data.data.data;
-        // console.log(this.decksById, " turetu buti decksbyId");
       })
       .catch((error) => {
-        // this.error.message = error.data;
+        this.error.message = error.data;
       });
   }
 
@@ -74,11 +70,10 @@ class MatchesController {
     this.matchesService.getWinrate(data)
       .then((data) => {
         this.winrate = data.data.data;
-        console.log(this.winrate, " turetu buti winrate");
         this.showPie(this.winrate);
       })
       .catch((error) => {
-        // this.error.message = error.data;
+        this.error.message = error.data;
       });
     // window.location.reload();
   };
