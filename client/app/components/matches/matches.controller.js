@@ -1,12 +1,22 @@
 class MatchesController {
-  constructor(matchesService, classesService,$scope) {
+  constructor(matchesService, classesService, $scope, loginService) {
     this.name = 'hero';
     this.matchesService = matchesService;
     this.matches;
     this.classesService = classesService;
     this.classes;
+    this.loginService = loginService;
 
-    this.labels =["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"];
+    this.loginService.isSignedIn();
+
+
+    // console.log(this.User.getUser())
+    // if(true) {
+    //   this.$state.go('login');
+    // }
+
+
+    this.labels = ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"];
 
     this.data = [
       [65, 59, 90, 81, 56, 55, 40],
@@ -35,7 +45,22 @@ class MatchesController {
         // this.error.message = error.data;
       });
 
+
+
   }
+
+  showPie(winrate) {
+    var total = 158,
+      pie = document.querySelector('.pie')
+    var numberFixer = function (num) {
+      var result = ((num * total) / 100);
+      return result;
+    }
+    var fixedNumber = numberFixer(winrate),
+      result = fixedNumber + ' ' + total;
+    pie.style.strokeDasharray = result;
+  }
+
 
   saveMatch(data) {
     this.matchesService.addMatch(data);
@@ -45,9 +70,10 @@ class MatchesController {
   getWinrate(data) {
     this.matchesService.getWinrate(data)
       .then((data) => {
-      this.winrate = data.data.data;
-      console.log(this.winrate, " turetu buti winrate");
-    })
+        this.winrate = data.data.data;
+        console.log(this.winrate, " turetu buti winrate");
+        this.showPie(this.winrate);
+      })
       .catch((error) => {
         // this.error.message = error.data;
       });

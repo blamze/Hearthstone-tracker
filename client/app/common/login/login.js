@@ -6,6 +6,15 @@ let loginModule = angular.module('login', [
   uiRouter
 ])
 
+  .config(($stateProvider) => {
+    "ngInject";
+    $stateProvider
+      .state('login', {
+        url: '/login',
+        component: 'login'
+      });
+  })
+
 .component('login', loginComponent)
 
 .name;

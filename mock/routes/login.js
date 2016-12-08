@@ -2,7 +2,7 @@ var pgp = require('pg-promise')();
 var dbConfig = {
     host: 'localhost',
     port: 5432,
-    database: 'booking-room-system',
+    database: 'hearthstone',
     user: 'postgres',
     password: 'postgres'
 };
@@ -12,11 +12,12 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/', function (req, res) {
-
-    if (req.body.username !== '' && req.body.password !== '') {
-        db.one("select u.*, p.name as position_name from users u join positions p on u.position = p.id where username=$1 AND password=$2", [req.body.username, req.body.password])
+  console.log('hello ',req.body);
+  var data = req.body;
+    if (data.username !== '' && data.password !== '') {
+        db.one("select u.* from users u where email=$1 AND password=$2", [data.email, data.password])
             .then(function (data) {
-                res.status(200).send({data: data, token: chance.hash()});
+                res.status(200).send({data: data.username, token: chance.hash()});
             })
             .catch(function (error) {
                 res.status(500).send(error.message);

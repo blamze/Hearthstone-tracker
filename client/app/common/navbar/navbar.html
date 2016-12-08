@@ -1,24 +1,16 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Hearthstone trackerZ</a>
+      <a class="navbar-brand" ui-sref="matches">Hearthstone statistics</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a ui-sref="home">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li>
+      <li class="active"><a ui-sref="matches">Matches</a></li>
       <li><a ui-sref="decks">Decks</a></li>
       <li><a ui-sref="classes">Classes</a></li>
       <li><a ui-sref="cards">Cards</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a ui-sref="registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a ng-click="$ctrl.logOff()"><span class="glyphicon glyphicon-user"></span> Log Off</a></li>
     </ul>
   </div>
 </nav>

@@ -1,116 +1,104 @@
-<navbar></navbar>
+<navBar></navBar>
 <div>
-<section>
-  <div class="container">
-    <h2>Choose tab</h2>
-    <ul class="nav nav-pills">
-      <li class="active"><a data-toggle="pill" href="#view">Matches</a></li>
-      <li><a data-toggle="pill" href="#add">Add new statistic</a></li>
-      <li><a data-toggle="pill" href="#winrate">Winrates</a></li>
-      <!--<li><a data-toggle="pill" href="#delete">Delete statistic</a></li>-->
-    </ul>
+  <section>
+    <div class="container">
+      <h2>Choose tab</h2>
+      <ul class="nav nav-pills">
+        <li class="active"><a data-toggle="pill" href="#view">Matches</a></li>
+        <li><a data-toggle="pill" href="#add">Add new statistic</a></li>
+        <li><a data-toggle="pill" href="#winrate">Winrates</a></li>
+        <!--<li><a data-toggle="pill" href="#delete">Delete statistic</a></li>-->
+      </ul>
 
-    <div class="tab-content">
-      <div id="view" class="tab-pane fade in active">
-        <div ng-repeat="x in $ctrl.matches">
-          <img ng-src="{{x.firstclassimg}}" alt="">
-          <img ng-src="{{x.secondclassimg}}" alt="">
-          <h3>{{x.firstclass}} played against {{x.secondclass}} and {{x.win == true? "won" : "lost"}} </h3>
+      <div class="tab-content">
+        <div id="view" class="tab-pane fade in active">
+          <div ng-repeat="x in $ctrl.matches">
+            <img ng-src="{{x.firstclassimg}}" alt="">
+            <img ng-src="{{x.secondclassimg}}" alt="">
+            <h3>{{x.firstclass}} played against {{x.secondclass}} and {{x.win == true? "won" : "lost"}} </h3>
+          </div>
+        </div>
+
+        <div id="add" class="tab-pane fade">
+          <h1>Add new game</h1>
+          <div class="form-group col-sm-6">
+            <form name="addForm">
+              <select
+                name="addClassInputF"
+                class="sm form-control"
+                ng-options="class.id as class.name for class in $ctrl.classes"
+                ng-model="add.fclass" placeholder="Select Class" required>
+                <option value="">- Select class -</option>
+              </select>
+              <select
+                name="addDeckInputF"
+                class="sm form-control"
+                ng-options="deck.id as deck.name for deck in $ctrl.deckF"
+                ng-model="add.id" placeholder="Select Deck" required>
+                <option value="">- Select class -</option>
+              </select>
+              <div class="radio">
+                <label><input ng-model="add.win" value=true type="radio" name="addWinInput" required>Won</label>
+              </div>
+              <p ng-hide="addForm.addClassInputF.$valid">Class is required.</p>
+              <h1>----------------VS--------------</h1>
+              <select
+                name="addClassInputS"
+                class="sm form-control"
+                ng-options="class.id as class.name for class in $ctrl.classes"
+                ng-model="add.sclass" placeholder="Select Class" required>
+                <option value="">- Select class -</option>
+              </select>
+              <div class="radio">
+                <label><input ng-model="add.win" value=false type="radio" name="addWinInput" required>Won</label>
+              </div>
+              <p ng-hide="addForm.addClassInputS.$valid">Class is required.</p>
+              <input class="btn btn-default"
+                     ng-disabled="!addForm.addClassInputF.$valid && !addForm.addClassInputS.$valid && !addForm.addWinInput.$valid"
+                     type="submit"
+                     ng-click="$ctrl.saveMatch(add)" value="Add"/>
+            </form>
+          </div>
+        </div>
+
+        <div id="winrate" class="tab-pane fade">
+          <h1>Winrate</h1>
+          <canvas id="radar" class="chart chart-radar"
+                  chart-data="$ctrl.data" chart-options="options" chart-labels="$ctrl.labels">
+          </canvas>
+          <div class="form-group col-sm-6">
+            <form name="selectForm">
+              <select
+                name="selectClassInput"
+                class="sm form-control"
+                ng-options="class.id as class.name for class in $ctrl.classes"
+                ng-model="select.fclass" placeholder="Select Class" required>
+                <option value="">- Select class -</option>
+              </select>
+              <select
+                name="selectClassInput"
+                class="sm form-control"
+                ng-options="class.id as class.name for class in $ctrl.classes"
+                ng-model="select.sclass" placeholder="Select Class" required>
+                <option value="">- Select class -</option>
+              </select>
+              <input
+                class="btn btn-default"
+                type="submit" ng-click="$ctrl.getWinrate(select)" value="Winrate"/>
+            </form>
+          </div>
+          <h3> Winrate : {{$ctrl.winrate| number:1}}
+            <div class="chart"></div>
+            <figure>
+              <div class="buttons"></div>
+              <svg width="100" height="100" class="chart">
+                <circle r="25" cx="50" cy="50" class="pie"/>
+              </svg>
+            </figure>
+          </h3>
         </div>
       </div>
-
-      <div id="add" class="tab-pane fade">
-        <h1>Add new game</h1>
-        <div class="form-group col-sm-6">
-          <form name="addForm">
-            <select
-              name="addClassInputF"
-              class="sm form-control"
-              ng-options="class.id as class.name for class in $ctrl.classes"
-              ng-model="add.fclass" placeholder="Select Class" required>
-              <option value="">- Select class -</option>
-            </select>
-            <select
-              name="addDeckInputF"
-              class="sm form-control"
-              ng-options="deck.id as deck.name for deck in $ctrl.deckF"
-              ng-model="add.id" placeholder="Select Deck" required>
-              <option value="">- Select class -</option>
-            </select>
-            <div class="radio">
-              <label><input ng-model="add.win" value=true type="radio" name="addWinInput" required>Won</label>
-            </div>
-            <p ng-hide="addForm.addClassInputF.$valid">Class is required.</p>
-            <h1>----------------VS--------------</h1>
-            <select
-              name="addClassInputS"
-              class="sm form-control"
-              ng-options="class.id as class.name for class in $ctrl.classes"
-              ng-model="add.sclass" placeholder="Select Class" required>
-              <option value="">- Select class -</option>
-            </select>
-            <div class="radio">
-              <label><input ng-model="add.win" value=false type="radio" name="addWinInput" required>Won</label>
-            </div>
-            <p ng-hide="addForm.addClassInputS.$valid">Class is required.</p>
-            <input class="btn btn-default" ng-disabled="!addForm.addClassInputF.$valid && !addForm.addClassInputS.$valid && !addForm.addWinInput.$valid"
-                   type="submit"
-                   ng-click="$ctrl.saveMatch(add)" value="Add"/>
-          </form>
-        </div>
-      </div>
-
-      <div id="winrate" class="tab-pane fade">
-        <h1>Winrate</h1>
-        <canvas id="radar" class="chart chart-radar"
-                chart-data="$ctrl.data" chart-options="options" chart-labels="$ctrl.labels">
-        </canvas>
-        <div class="form-group col-sm-6">
-          <form name="selectForm">
-            <select
-              name="selectClassInput"
-              class="sm form-control"
-              ng-options="class.id as class.name for class in $ctrl.classes"
-              ng-model="select.fclass" placeholder="Select Class" required>
-              <option value="">- Select class -</option>
-            </select>
-            <select
-              name="selectClassInput"
-              class="sm form-control"
-              ng-options="class.id as class.name for class in $ctrl.classes"
-              ng-model="select.sclass" placeholder="Select Class" required>
-              <option value="">- Select class -</option>
-            </select>
-            <input
-              class="btn btn-default"
-              type="submit" ng-click="$ctrl.getWinrate(select)" value="Winrate"/>
-          </form>
-        </div>
-        <h3> Winrate : {{$ctrl.winrate}}</h3>
-      </div>
-
-      <!--<div id="delete" class="tab-pane fade">-->
-        <!--<h1>Delete class</h1>-->
-        <!--<div class="form-group col-sm-6">-->
-          <!--<form name="deleteForm">-->
-            <!--<select-->
-              <!--name="deleteClassInput"-->
-              <!--class="form-control"-->
-              <!--ng-options="class.id as class.name for class in $ctrl.classes"-->
-              <!--ng-model="delete.id" placeholder="Select Class" required>-->
-              <!--<option value="">- Select class -</option>-->
-            <!--</select>-->
-            <!--<p ng-hide="deleteForm.deleteClassInput.$valid">Class is required.</p>-->
-            <!--<input class="btn btn-default" ng-disabled="!deleteForm.deleteClassInput.$valid" type="submit"-->
-                   <!--ng-click="$ctrl.deleteClass(delete)"-->
-                   <!--value="Delete"/>-->
-          <!--</form>-->
-          <!--<div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
     </div>
-  </div>
 
-</section>
+  </section>
 </div>
