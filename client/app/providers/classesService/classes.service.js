@@ -27,7 +27,6 @@ export default class classesService {
   }
 
   deleteClass(options) {
-    debugger;
     return this.http({
       method: "PUT",
       url: "http://localhost:3300/api/classes/delete",

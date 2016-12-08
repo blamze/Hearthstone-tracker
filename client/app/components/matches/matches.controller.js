@@ -1,5 +1,5 @@
 class MatchesController {
-  constructor(matchesService, classesService, $scope, loginService,decksService) {
+  constructor(matchesService, classesService, $scope, loginService, decksService) {
     this.name = 'hero';
     this.matchesService = matchesService;
     this.matches;
@@ -9,31 +9,23 @@ class MatchesController {
     this.decksService = decksService;
     this.loginService.isSignedIn();
 
-    var getClasses = this.classesService.getClasses();
-// console.log(promise);
-    getClasses
+    this.classesService.getClasses()
       .then((data) => {
         this.classes = data.data.data;
-        console.log(this.classes, " turetu buti classes");
       })
       .catch((error) => {
         // this.error.message = error.data;
       });
 
-    var promise = this.matchesService.getMatches();
-    console.log(promise);
-    promise
-      .then((data) => {
-        this.matches = data.data.data;
-        console.log(this.matches, " turetu buti data");
-      })
+    this.matchesService.getMatches().then((data) => {
+      this.matches = data.data.data;
+    })
       .catch((error) => {
         // this.error.message = error.data;
       });
-
-
 
   }
+
   findDecksF(data) {
     console.log(data);
     var getDeckById = this.decksService.findDeck({classid: data.fclass});

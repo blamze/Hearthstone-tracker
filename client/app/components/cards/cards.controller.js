@@ -1,7 +1,9 @@
 class CardsController {
-  constructor(cardsService) {
+  constructor(cardsService, loginService) {
     this.cardsService = cardsService;
+    this.loginService = loginService;
     this.cards = {};
+    this.loginService.isSignedIn();
   }
 
   findCards(option) {

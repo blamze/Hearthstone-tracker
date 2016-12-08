@@ -56,7 +56,6 @@ router.put('/edit', function (req, res) {
 
 // // Delete class
 router.put('/delete', function (req, res) {
-  console.log(req.body)
   var id = req.body.id;
   if (id !== undefined) {
     db.none("UPDATE classes " +

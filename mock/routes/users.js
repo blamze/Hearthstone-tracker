@@ -1,119 +1,77 @@
 var _ = require('lodash');
 var pgp = require('pg-promise')();
 var dbConfig = {
-    host: 'localhost',
-    port: 5432,
-    database: 'hearthstone',
-    user: 'postgres',
-    password: 'postgres'
+  host: 'localhost',
+  port: 5432,
+  database: 'hearthstone',
+  user: 'postgres',
+  password: 'postgres'
 };
 var db = pgp(dbConfig);
 var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-    db.any("SELECT " +
-        "u.id, " +
-        "u.username, " +
-        "u.email " +
-        "FROM users u " +
-        "WHERE isdeleted=false " +
-        "ORDER BY id ASC", [])
-        .then(function (data) {
-            // console.log(data);
-            res.status(200).send({data: data});
-            // success;
-        })
-        .catch(function (error) {
-            // console.log(error);
-            res.status(500).send(error.message);
-            // error;
-        });
+  db.any("SELECT " +
+    "u.id, " +
+    "u.username, " +
+    "u.email " +
+    "FROM users u " +
+    "WHERE isdeleted=false " +
+    "ORDER BY id ASC", [])
+    .then(function (data) {
+      res.status(200).send({data: data});
+      // success;
+    })
+    .catch(function (error) {
+      res.status(500).send(error.message);
+      // error;
+    });
 });
 
 // Insert user
-router.post('/', function(req, res){
-    var data = req.body;
+router.post('/', function (req, res) {
+  var data = req.body;
 
-  console.log(data);
+  if (data.username !== '' && data.password !== '' && data.email !== '') {
 
-    if(data.username !== '' && data.password !== '' && data.email !== '') {
-
-        db.one("INSERT INTO users (username, password, email) " +
-                "VALUES ($1, $2, $3) " +
-                "RETURNING id", [data.username, data.password, data.email])
-            .then(function (data) {
-                // console.log(data);
-                // if(_.isString(data)){
-                //     res.status(500).send(data);
-                // }
-                // else {
-                    res.status(200).send({id: data.id});
-                // }
-                // success;
-            })
-            .catch(function (error) {
-                // console.log(error);
-                res.status(500).send(error.message);
-                // error;
-            });
-
-    }
-    else{
-        res.status(500).send("Username, email or password is empty");
-    }
+    db.one("INSERT INTO users (username, password, email) " +
+      "VALUES ($1, $2, $3) " +
+      "RETURNING id", [data.username, data.password, data.email])
+      .then(function (data) {
+        res.status(200).send({id: data.id});
+        // success;
+      })
+      .catch(function (error) {
+        res.status(500).send(error.message);
+        // error;
+      });
+  }
+  else {
+    res.status(500).send("Username, email or password is empty");
+  }
 
 });
 
-// Update user
-// router.put('/', function(req, res){
-//     var data = req.body;
-//
-//     if(data && data.id !== undefined && data.username !== '' && data.password !== '') {
-//
-//         db.none("UPDATE users " +
-//                 "SET username=$1, password=$2, role=$3, name=$4, position=$5, email=$6 WHERE id=$7", [data.username, data.password, data.role, data.name, data.position, data.email, data.id])
-//             .then(function (data) {
-//                 // console.log(data);
-//                 res.sendStatus(200);
-//                 // success;
-//             })
-//             .catch(function (error) {
-//                 // console.log(error);
-//                 res.status(500).send(error.message);
-//                 // error;
-//             });
-//
-//     }
-//     else{
-//         res.status(500).send("No ID provided");
-//     }
-//
-// });
 
 // Delete user
-router.delete('/', function(req, res){
-    var data = req.body;
-
-    if(data && data.id !== undefined) {
-
-        db.none("UPDATE users " +
-                "SET isdeleted=true WHERE id=$1", [data.id])
-            .then(function (data) {
-                // console.log(data);
-                res.sendStatus(200);
-                // success;
-            })
-            .catch(function (error) {
-                // console.log(error);
-                res.status(500).send(error.message);
-                // error;
-            });
-
-    }
-    else{
-        res.status(500).send("No ID provided");
-    }
+router.delete('/', function (req, res) {
+  var data = req.body;
+  if (data && data.id !== undefined) {
+    db.none("UPDATE users " +
+      "SET isdeleted=true WHERE id=$1", [data.id])
+      .then(function (data) {
+        res.sendStatus(200);
+        // success;
+      })
+      .catch(function (error) {
+        res.status(500).send(error.message);
+        // error;
+      });
+  }
+  else {
+    res.status(500).send("No ID provided");
+  }
 
 });
 

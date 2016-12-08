@@ -7,7 +7,7 @@ class LoginController {
   login(data) {
     this.loginService.loginIn(data).then((info)=>{
       this.loginService.setUser(info);
-      this.loginService.isSignedIn();
+      this.$state.go('matches');
     });
   }
 

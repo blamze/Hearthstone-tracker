@@ -12,7 +12,6 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/', function (req, res) {
-  console.log('hello ',req.body);
   var data = req.body;
     if (data.username !== '' && data.password !== '') {
         db.one("select u.* from users u where email=$1 AND password=$2", [data.email, data.password])

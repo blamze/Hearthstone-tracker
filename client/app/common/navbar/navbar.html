@@ -10,7 +10,8 @@
       <li><a ui-sref="cards">Cards</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a ng-click="$ctrl.logOff()"><span class="glyphicon glyphicon-user"></span> Log Off</a></li>
+      <li class="nick">Hello {{$ctrl.username.data}}</li>
+      <li><a ng-click="$ctrl.logOff()"><span class="glyphicon glyphicon-user"></span>Log Out</a></li>
     </ul>
   </div>
 </nav>

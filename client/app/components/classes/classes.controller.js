@@ -1,18 +1,18 @@
 class ClassesController {
-  constructor(classesService) {
+  constructor(classesService, loginService) {
     this.classesService = classesService;
+    this.loginService = loginService;
     this.classes;
 
-    var promise = this.classesService.getClasses();
-    console.log(promise);
-    promise
+    this.classesService.getClasses()
       .then((data) => {
         this.classes = data.data.data;
-        console.log(this.classes, " turetu buti classes");
       })
       .catch((error) => {
-        // this.error.message = error.data;
+        this.error.message = error.data;
       });
+
+    this.loginService.isSignedIn();
   }
 
   saveClass(data) {

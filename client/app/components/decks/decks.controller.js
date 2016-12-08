@@ -1,32 +1,28 @@
 class DecksController {
-    constructor(classesService, decksService) {
+    constructor(classesService, decksService, loginService) {
     this.decksService = decksService;
+      this.loginService = loginService;
     this.decks;
     this.classesService = classesService;
     this.classes;
     this.decksById;
 
-    var getDecks = this.decksService.getDecks();
-    // console.log(promise);
-    getDecks
-      .then((data) => {
+    this.decksService.getDecks().then((data) => {
         this.decks = data.data.data;
-        console.log(this.decks, " turetu buti decks");
       })
       .catch((error) => {
         // this.error.message = error.data;
       });
 
-      var getClasses = this.classesService.getClasses();
-      // console.log(promise);
-      getClasses
+      this.classesService.getClasses()
         .then((data) => {
           this.classes = data.data.data;
-          console.log(this.classes, " turetu buti classes");
         })
         .catch((error) => {
           // this.error.message = error.data;
         });
+
+      this.loginService.isSignedIn();
   }
   findDeck(data) {
     console.log(data);

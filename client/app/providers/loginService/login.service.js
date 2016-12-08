@@ -22,8 +22,6 @@ export default class loginService {
     if(!this.$window.sessionStorage.getItem('user')) {
     // if(!this.user.isSignedIn) {
       this.$state.go('login');
-    } else {
-      this.$state.go('matches');
     }
   }
   setUser(data){

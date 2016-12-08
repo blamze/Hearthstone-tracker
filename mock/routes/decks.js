@@ -14,27 +14,24 @@ var router = express.Router();
 router.get('/', function (req, res) {
   db.any("SELECT d.id, c.name as class, c.img as classimg, d.url, d.name FROM decktypes d JOIN classes c on d.classid = c.id WHERE d.isdeleted=false", [])
     .then(function (data) {
-      // console.log(data);
       res.status(200).send({data: data});
       // success;
     })
     .catch(function (error) {
-      // console.log(error);
       res.status(500).send(error.message);
       // error;
     });
 });
+
 // get deck by id
 router.get('/:id', function (req, res) {
   var id = req.params.id
   db.any("SELECT d.id, c.name as class, c.img as classimg, d.url, d.name FROM decktypes d JOIN classes c on d.classid = c.id WHERE d.classid=$1 and d.isdeleted=false", [id])
     .then(function (data) {
-      // console.log(data);
       res.status(200).send({data: data});
       // success;
     })
     .catch(function (error) {
-      // console.log(error);
       res.status(500).send(error.message);
       // error;
     });
@@ -50,11 +47,9 @@ router.post('/new', function (req, res) {
       // success;
     })
     .catch(function (error) {
-      // console.log(error);
       res.status(500).send(error.message);
       // error;
     });
-
 });
 
 // // Update deck
@@ -71,9 +66,9 @@ router.put('/edit', function (req, res) {
       // error;
     });
 });
+
 // // Delete deck
 router.put('/delete', function (req, res) {
-  console.log(req.body)
   var id = req.body.id;
   if (id !== undefined) {
     db.none("UPDATE decktypes " +
