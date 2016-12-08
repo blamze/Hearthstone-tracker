@@ -12,7 +12,7 @@ var express = require('express');
 var router = express.Router();
 //get all decks
 router.get('/', function (req, res) {
-  db.any("SELECT d.id, c.name as class, c.img as classimg, d.url, d.name FROM decktypes d JOIN classes c on d.classid = c.id", [])
+  db.any("SELECT d.id, c.name as class, c.img as classimg, d.url, d.name FROM decktypes d JOIN classes c on d.classid = c.id WHERE d.isdeleted=false", [])
     .then(function (data) {
       // console.log(data);
       res.status(200).send({data: data});
@@ -27,7 +27,7 @@ router.get('/', function (req, res) {
 // get deck by id
 router.get('/:id', function (req, res) {
   var id = req.params.id
-  db.any("SELECT d.id, c.name as class, c.img as classimg, d.url, d.name FROM decktypes d JOIN classes c on d.classid = c.id WHERE d.classid=$1", [id])
+  db.any("SELECT d.id, c.name as class, c.img as classimg, d.url, d.name FROM decktypes d JOIN classes c on d.classid = c.id WHERE d.classid=$1 and d.isdeleted=false", [id])
     .then(function (data) {
       // console.log(data);
       res.status(200).send({data: data});
@@ -61,7 +61,7 @@ router.post('/new', function (req, res) {
 router.put('/edit', function (req, res) {
   var data = req.body;
 
-  db.none("UPDATE decktypes SET name=$1, url=$2, classid=$3 WHERE id=$4", [data.name, data.url, data.classid, data.id])
+  db.none("UPDATE decktypes SET name=$1, url=$2, classid=$3 WHERE id=$4 and isdeleted=false", [data.name, data.url, data.classid, data.id])
     .then(function (data) {
       // success;
       res.status(200).send("ok");
@@ -72,12 +72,14 @@ router.put('/edit', function (req, res) {
     });
 });
 // // Delete deck
-router.delete('/delete', function (req, res) {
-    var data = req.body;
-
-    db.none("DELETE FROM decktypes WHERE id=($1)", [data.id])
+router.put('/delete', function (req, res) {
+  console.log(req.body)
+  var id = req.body.id;
+  if (id !== undefined) {
+    db.none("UPDATE decktypes " +
+      "SET isdeleted=true WHERE id=$1", [id])
       .then(function (data) {
-        res.status(200).send("ok");
+        res.sendStatus(200);
         // success;
       })
       .catch(function (error) {
@@ -85,6 +87,9 @@ router.delete('/delete', function (req, res) {
         // error;
       });
   }
-);
+  else {
+    res.status(500).send("No ID provided");
+  }
+});
 
 module.exports = router;

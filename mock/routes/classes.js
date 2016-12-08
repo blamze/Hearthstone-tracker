@@ -12,7 +12,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-  db.any("SELECT * FROM classes", [])
+  db.any("SELECT * FROM classes WHERE isdeleted=false", [])
     .then(function (data) {
       res.status(200).send({data: data});
       // success;
@@ -42,7 +42,7 @@ router.post('/new', function (req, res) {
 router.put('/edit', function (req, res) {
   var data = req.body;
 
-  db.none("UPDATE classes SET name=$1, img=$2 WHERE id=$3", [data.name, data.img, data.id])
+  db.none("UPDATE classes SET name=$1, img=$2 WHERE id=$3 and isdeleted=false", [data.name, data.img, data.id])
     .then(function (data) {
       // success;
       res.status(200).send("ok");
@@ -55,21 +55,25 @@ router.put('/edit', function (req, res) {
 });
 
 // // Delete class
-router.delete('/delete', function (req, res) {
-    var data = req.body;
-
-    db.none("DELETE FROM classes WHERE id=($1)", [data.id])
+router.put('/delete', function (req, res) {
+  console.log(req.body)
+  var id = req.body.id;
+  if (id !== undefined) {
+    db.none("UPDATE classes " +
+      "SET isdeleted=true WHERE id=$1", [id])
       .then(function (data) {
-        res.status(200).send("ok");
+        res.sendStatus(200);
         // success;
       })
       .catch(function (error) {
-        // res.status(500).send(error.message);
         res.status(500).send(error.message);
         // error;
       });
   }
+  else {
+    res.status(500).send("No ID provided");
+  }
+});
 
-);
 
 module.exports = router;

@@ -12,7 +12,7 @@
 
     <div class="tab-content">
       <div id="view" class="tab-pane fade in active">
-        <div ng-repeat="class in $ctrl.classes">
+        <div class="classes" ng-repeat="class in $ctrl.classes | orderBy:'id'">
           <h3> {{class.id}} {{class.name}} <img ng-src="{{class.img}}" alt=""></h3>
         </div>
       </div>

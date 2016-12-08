@@ -29,7 +29,7 @@ export default class classesService {
   deleteClass(options) {
     debugger;
     return this.http({
-      method: "DELETE",
+      method: "PUT",
       url: "http://localhost:3300/api/classes/delete",
       data: options
     });

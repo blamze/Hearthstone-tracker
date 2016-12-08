@@ -36,7 +36,7 @@ export default class decksService {
   deleteDeck(options) {
     debugger;
     return this.http({
-      method: "DELETE",
+      method: "PUT",
       url: "http://localhost:3300/api/decks/delete",
       data: options
     });

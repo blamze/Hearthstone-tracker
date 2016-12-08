@@ -9,8 +9,9 @@
 
     <div class="tab-content">
       <div id="view" class="tab-pane fade in active">
-        <input name="findCardInput" class="form-control" type="text" ng-model="find.name"
-               ng-keyup="$ctrl.findCards(find)">
+        <input name="findCardInput" class="form-control" type="text" ng-model="find.name">
+        <input class="btn btn-default" type="button" value="Search" ng-click="$ctrl.findCards(find)">
+        <br>
         <div class="inline" ng-repeat="card in $ctrl.cards | limitTo:12">
           <div class="cards"><img ng-src="{{card.img}}" alt=""></div>
         </div>
