@@ -13,17 +13,17 @@ var router = express.Router();
 
 router.post('/', function (req, res) {
   var data = req.body;
-    if (data.username !== '' && data.password !== '') {
-        db.one("select u.* from users u where email=$1 AND password=$2", [data.email, data.password])
+    if (data.email !== '' && data.password !== '') {
+        db.one("select u.username, u.email from users u where email=$1 AND password=$2", [data.email, data.password])
             .then(function (data) {
-                res.status(200).send({data: data.username, token: chance.hash()});
+                res.status(200).send({username: data.username, email: data.email, token: chance.hash()});
             })
             .catch(function () {
-                res.status(500).send("Bad username or password");
+                res.status(500).send("Bad email or password");
             });
     }
     else {
-        res.status(404).send("Insert username and password");
+        res.status(404).send("Insert email and password");
     }
 });
 

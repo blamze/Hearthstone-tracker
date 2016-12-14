@@ -4,13 +4,14 @@
       <a class="navbar-brand" ui-sref="matches">Hearthstone statistics</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a ui-sref="matches">Matches</a></li>
+      <li><a ui-sref="matches">Matches</a></li>
       <li><a ui-sref="decks">Decks</a></li>
       <li><a ui-sref="classes">Classes</a></li>
       <li><a ui-sref="cards">Cards</a></li>
+      <li><a ui-sref="highscore">Highscore</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="nick">Hello {{$ctrl.username.data}}</li>
+      <li class="nick">Hello {{$ctrl.data.username}}</li>
       <li><a ng-click="$ctrl.logOff()"><span class="glyphicon glyphicon-user"></span>Log Out</a></li>
     </ul>
   </div>

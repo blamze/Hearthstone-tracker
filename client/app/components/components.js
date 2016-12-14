@@ -6,6 +6,7 @@ import Cards from './cards/cards';
 import Registration from './registration/registration';
 import Matches from './matches/matches';
 import Login from './login/login';
+import Highscore from './highscore/highscore';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -14,7 +15,8 @@ let componentModule = angular.module('app.components', [
   Cards,
   Registration,
   Matches,
-  Login
+  Login,
+  Highscore
 ])
 
 .name;

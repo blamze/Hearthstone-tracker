@@ -1,8 +1,7 @@
 class NavbarController {
-  constructor(loginService,$window) {
+  constructor(loginService) {
     this.loginService = loginService;
-    this.$window = $window;
-    this.username =  JSON.parse(this.$window.sessionStorage.getItem('user'));
+    this.data =  this.loginService.getUserInfo();
   }
 
   logOff() {

@@ -12,8 +12,10 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-  db.any("SELECT m.id, c.name as firstClass, c.img as firstClassImg, p.name as secondClass ,p.img as secondClassImg, m.win" +
-    " FROM matches m JOIN classes c on m.fclass = c.id JOIN classes p on m.sclass = p.id ", [])
+  db.any("SELECT m.id, m.date, c.name as firstClass, c.img as firstClassImg, " +
+    " p.name as secondClass ,p.img as secondClassImg, m.win , d.name as firstDeck, z.name as secondDeck" +
+    " FROM matches m JOIN classes c on m.fclass = c.id JOIN classes p on m.sclass = p.id JOIN decktypes d on m.fdeck = d.id " +
+    "JOIN decktypes z on m.sdeck = z.id ", [])
     .then(function (data) {
       res.status(200).send({data: data});
       // success;
@@ -24,15 +26,16 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/winrate', function (req, res) {
-  var data = req.query;
-  db.any("SELECT (SELECT COUNT(id) from matches WHERE fclass=$1 and win=true) as w, " +
-    "(SELECT COUNT(id) from matches WHERE sclass=$1 and win=false) as ww," +
-    "(SELECT COUNT(id) from matches WHERE sclass=$2 and fclass=$1) as l, " +
-    "(SELECT COUNT(id) from matches WHERE sclass=$1 and fclass=$2) as ll ", [data.fclass, data.sclass])
-    .then(function (data) {
-      var proc = (Number(data[0].w)+Number(data[0].ww)) / (Number(data[0].l)+Number(data[0].ll))*100;
-
+router.post('/winrate', function (req, res) {
+  var data = req.body;
+  db.any("SELECT (SELECT COUNT(id) from matches WHERE fclass=$1 and sclass=$2 and win=true) as w, " +
+    "(SELECT COUNT(id) from matches WHERE fclass=$2 and sclass=$1 and win=false) as ww," +
+    "(SELECT COUNT(id) from matches WHERE sclass=$2 and fclass=$1) as total, " +
+    "(SELECT COUNT(id) from matches WHERE sclass=$1 and fclass=$2) as total2 ", [data.fclass, data.sclass])
+    .then(function (info) {
+      var num1 = Number(info[0].w) > Number(info[0].ww) ? Number(info[0].w) : Number(info[0].ww);
+      var num2 = Number(info[0].total) > Number(info[0].total2) ? Number(info[0].total) : Number(info[0].total2);
+      var proc = (num1 / num2) * 100;
       res.status(200).send({data: proc});
       // success;
     })
@@ -48,7 +51,7 @@ router.post('/new', function (req, res) {
 
   db.one("INSERT INTO matches (fclass, sclass, win, fdeck, sdeck,date) " +
     "VALUES ($1, $2, $3, $4, $5, $6) " +
-    "RETURNING *", [data.fclass, data.sclass, data.win,data.fdeck,data.sdeck, new Date()])
+    "RETURNING *", [data.fclass, data.sclass, data.win, data.fdeck, data.sdeck, new Date()])
     .then(function (data) {
       res.status(200).send("ok");
       // success;

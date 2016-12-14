@@ -7,7 +7,8 @@ export default class loginService {
   }
 
   getUserInfo() {
-    return this.$window.sessionStorage.user;
+    var data = JSON.parse(this.$window.sessionStorage.getItem('user'));
+    return data.data;
   }
 
   logOff() {
@@ -22,6 +23,7 @@ export default class loginService {
     }
   }
   setUser(data){
+    console.log(data.data);
     if(data.data.token) {
       this.$window.sessionStorage.setItem('user', angular.toJson(data.data));
     }

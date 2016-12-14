@@ -1,50 +1,57 @@
 class MatchesController {
-  constructor(matchesService, classesService, $scope, loginService, decksService) {
-    this.name = 'hero';
+  constructor(matchesService, classesService, loginService, decksService, usersService,$window) {
     this.matchesService = matchesService;
-    this.matches;
     this.classesService = classesService;
-    this.classes;
     this.loginService = loginService;
     this.decksService = decksService;
+    this.usersService = usersService;
+    this.$window = $window;
+    this.classes;
+    this.matches;
+    this.message;
     this.loginService.isSignedIn();
+    this.loadClases();
+    this.loadMatches();
+    this.userData =  this.loginService.getUserInfo();
+  }
 
+  loadClases() {
     this.classesService.getClasses()
       .then((data) => {
         this.classes = data.data.data;
       })
       .catch((error) => {
-        this.error.message = error.data;
+        this.message = 'Could not load classes'
       });
+  }
 
-    this.matchesService.getMatches().then((data) => {
+  loadMatches() {
+    this.matchesService.getMatches()
+      .then((data) => {
       this.matches = data.data.data;
     })
-      .catch((error) => {
-        this.error.message = error.data;
+      .catch(() => {
+        this.message = 'Could not load matches'
       });
-
   }
 
   findDecksF(data) {
-    var getDeckById = this.decksService.findDeck({classid: data.fclass});
-    getDeckById
+    this.decksService.findDeck({classid: data.fclass})
       .then((data) => {
         this.deckF = data.data.data;
       })
-      .catch((error) => {
-        this.error.message = error.data;
+      .catch(() => {
+        this.message = 'Could not load decks';
       });
   }
 
   findDecksS(data) {
-    var getDeckById = this.decksService.findDeck({classid: data.sclass});
-    getDeckById
+    this.decksService.findDeck({classid: data.sclass})
       .then((data) => {
         this.deckS = data.data.data;
       })
-      .catch((error) => {
-        this.error.message = error.data;
+      .catch(() => {
+        this.message = 'Could not load decks';
       });
   }
 
@@ -62,8 +69,15 @@ class MatchesController {
 
 
   saveMatch(data) {
-    this.matchesService.addMatch(data);
-    // window.location.reload();
+    this.matchesService.addMatch(data)
+      .then(() => {
+        this.usersService.addPointsToUser({data:this.userData.email});
+        this.message = 'Match added, you got 1 point in highscore';
+        this.resetInputs();
+        this.loadMatches();
+      }).catch(()=> {
+      this.message = 'Error, something went wrong, try again';
+    });
   };
 
   getWinrate(data) {
@@ -72,22 +86,19 @@ class MatchesController {
         this.winrate = data.data.data;
         this.showPie(this.winrate);
       })
-      .catch((error) => {
-        this.error.message = error.data;
+      .catch(() => {
+        this.message = 'Could not load winrate';
       });
-    // window.location.reload();
   };
 
-  editClass(data) {
-    this.classesService.editMatch(data);
-    window.location.reload();
-  };
+  deleteMessage() {
+    this.message = '';
+  }
 
-  deleteClass(data) {
-    this.classesService.deleteMatch(data);
-    window.location.reload();
-  };
-
+  resetInputs(){
+    this.add = '';
+    this.select = '';
+  }
 }
 
 export default MatchesController;

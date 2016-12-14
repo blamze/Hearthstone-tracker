@@ -8,10 +8,21 @@ class DecksController {
     this.decksById;
     this.message;
     this.loginService.isSignedIn();
-    this.getDecks();
+    this.loadClases()
+    this.loadDecks();
   }
 
-  getDecks() {
+  loadClases() {
+    this.classesService.getClasses()
+      .then((data) => {
+        this.classes = data.data.data;
+      })
+      .catch(() => {
+        this.message = 'Could not load classes';
+      });
+  }
+
+  loadDecks() {
     this.decksService.getDecks()
       .then((data) => {
         this.decks = data.data.data;
@@ -19,40 +30,64 @@ class DecksController {
       .catch(() => {
         this.message = 'Could not load decks'
       });
-
-    this.classesService.getClasses()
-      .then((data) => {
-        this.classes = data.data.data;
-      })
-      .catch((error) => {
-        // this.error.message = error.data;
-      });
   }
 
   findDeck(data) {
-    var getDeckById = this.decksService.findDeck(data);
-    getDeckById
-      .then((data) => {
-        this.decks = data.data.data;
-      })
-      .catch((error) => {
-        // this.error.message = error.data;
-      });
+    if (data.classid === undefined) {
+      this.loadDecks();
+    } else {
+      this.decksService.findDeck(data)
+        .then((data) => {
+          this.decks = data.data.data;
+        })
+        .catch(() => {
+          this.message = 'Could not load decks';
+        });
+    }
   }
 
   saveDeck(data) {
-    this.decksService.addDeck(data);
-    window.location.reload();
+    this.decksService.addDeck(data)
+      .then(() => {
+        this.message = 'New deck added';
+        this.resetInputs();
+        this.loadDecks();
+      }).catch(()=> {
+      this.message = 'Error, something went wrong, try again';
+    });
   };
 
   editDeck(data) {
-    this.decksService.editDeck(data);
-    window.location.reload();
+    this.decksService.editDeck(data)
+      .then(() => {
+        this.message = 'Deck edited';
+        this.resetInputs();
+        this.loadDecks();
+      }).catch(()=> {
+      this.message = 'Error, something went wrong, try again';
+    });
   };
 
   deleteDeck(data) {
-    this.decksService.deleteDeck(data);
-    window.location.reload();
+    this.decksService.deleteDeck(data)
+      .then(() => {
+        this.message = 'Deck deleted';
+        this.resetInputs();
+        this.loadDecks();
+      }).catch(()=> {
+      this.message = 'Error, something went wrong, try again';
+    });
   };
+
+  deleteMessage(){
+    this.message = '';
+  }
+
+  resetInputs() {
+    this.delete = '';
+    this.add = '';
+    this.edit = '';
+    this.find = '';
+  }
 }
 export default DecksController;

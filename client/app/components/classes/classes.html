@@ -46,8 +46,8 @@
               name="editClassInput"
               class="sm form-control"
               ng-options="class.id as class.name for class in $ctrl.classes"
-              ng-model="$ctrl.edit.id" placeholder="Select Class" required>
-              <option value="">- Select class -</option>
+              ng-model="$ctrl.edit.id" required>
+              <option value="">Select class</option>
             </select>
             <p ng-hide="editForm.editClassInput.$valid">Class is required.</p>
             <label>Class name:</label>
@@ -73,8 +73,8 @@
               name="deleteClassInput"
               class="form-control"
               ng-options="class.id as class.name for class in $ctrl.classes"
-              ng-model="$ctrl.delete.id" placeholder="Select Class" required>
-              <option value="">- Select class -</option>
+              ng-model="$ctrl.delete.id" required>
+              <option value="">Select class</option>
             </select>
             <p ng-hide="deleteForm.deleteClassInput.$valid">Class is required.</p>
             <input class="btn btn-default" ng-disabled="!deleteForm.deleteClassInput.$valid" type="submit"

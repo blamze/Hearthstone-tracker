@@ -1,0 +1,19 @@
+<navbar></navbar>
+<h1>Players who added the most matches!</h1>
+<p>You can compete adding new played matches!</p>
+<section>
+  <div class="highscore">
+    <table>
+      <tr>
+        <th>Place</th>
+        <th>Username</th>
+        <th>Added matches</th>
+      </tr>
+      <tr class="border" ng-repeat="user in $ctrl.highscore track by $index | limitTo:20">
+        <td>{{$index+1}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.addedmatches}}</td>
+      </tr>
+    </table>
+  </div>
+</section>

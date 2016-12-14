@@ -15,10 +15,29 @@ router.get('/', function (req, res) {
   db.any("SELECT " +
     "u.id, " +
     "u.username, " +
-    "u.email " +
+    "u.email, " +
+    "u.addedmatches " +
     "FROM users u " +
     "WHERE isdeleted=false " +
     "ORDER BY id ASC", [])
+    .then(function (data) {
+      res.status(200).send({data: data});
+      // success;
+    })
+    .catch(function (error) {
+      res.status(500).send(error.message);
+      // error;
+    });
+});
+
+
+router.get('/highscore', function (req, res) {
+  db.any("SELECT " +
+    "u.username, " +
+    "u.addedMatches " +
+    "FROM users u " +
+    "WHERE isdeleted=false and addedmatches>0 " +
+    "ORDER BY addedmatches DESC", [])
     .then(function (data) {
       res.status(200).send({data: data});
       // success;
@@ -53,8 +72,6 @@ router.post('/', function (req, res) {
       }
 
     })
-
-
   }
   else {
     res.status(500).send("Inser username, email and password");
@@ -80,6 +97,24 @@ router.delete('/', function (req, res) {
   }
   else {
     res.status(500).send("No ID provided");
+  }
+});
+
+// Update user points
+router.put('/add', function (req, res) {
+  var data = req.body;
+  if(data.data) {
+    db.none("UPDATE users SET addedmatches=addedmatches+1 WHERE email=$1 and isdeleted=false", [data.data])
+      .then(function (data) {
+        // success;
+        res.status(200).send("ok");
+      })
+      .catch(function (error) {
+        res.status(500).send(error.message);
+        // error;
+      });
+  } else {
+    res.status(500).send("No email provided");
   }
 
 });
