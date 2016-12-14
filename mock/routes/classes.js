@@ -11,6 +11,7 @@ var db = pgp(dbConfig);
 var express = require('express');
 var router = express.Router();
 
+// Get all classes
 router.get('/', function (req, res) {
   db.any("SELECT * FROM classes WHERE isdeleted=false", [])
     .then(function (data) {
@@ -23,38 +24,43 @@ router.get('/', function (req, res) {
     });
 });
 
-// // Insert class
+// Insert class
 router.post('/new', function (req, res) {
   var data = req.body;
-
-  db.one("INSERT INTO classes (name, img, url) VALUES ($1, $2, $3) RETURNING *", [data.name, data.img, data.url])
-    .then(function (data) {
-      res.status(200).send("ok");
-      // success;
-    })
-    .catch(function (error) {
-      res.status(500).send(error.message);
-      // error;
-    });
+  if (data.name && data.img) {
+    db.one("INSERT INTO classes (name, img, url) VALUES ($1, $2, $3) RETURNING *", [data.name, data.img, data.url])
+      .then(function () {
+        res.status(200).send("class added");
+        // success;
+      })
+      .catch(function (error) {
+        res.status(500).send(error.message);
+        // error;
+      });
+  } else {
+    res.status(500).send('No class name or image');
+  }
 });
 
-// // Update class
+// Update class
 router.put('/edit', function (req, res) {
   var data = req.body;
-
-  db.none("UPDATE classes SET name=$1, img=$2, url=$3 WHERE id=$4 and isdeleted=false", [data.name, data.img, data.url, data.id])
-    .then(function (data) {
-      // success;
-      res.status(200).send("ok");
-    })
-    .catch(function (error) {
-      // console.log(error);
-      res.status(500).send(error.message);
-      // error;
-    });
+  if (data.name && data.img && data.id) {
+    db.none("UPDATE classes SET name=$1, img=$2, url=$3 WHERE id=$4 and isdeleted=false", [data.name, data.img, data.url, data.id])
+      .then(function () {
+        // success;
+        res.status(200).send("class updated");
+      })
+      .catch(function (error) {
+        res.status(500).send(error.message);
+        // error;
+      });
+  } else {
+    res.status(500).send('No class name ,image or id');
+  }
 });
 
-// // Delete class
+// Delete class
 router.put('/delete', function (req, res) {
   var id = req.body.id;
   if (id !== undefined) {

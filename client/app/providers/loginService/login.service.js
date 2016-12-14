@@ -1,14 +1,14 @@
 export default class loginService {
-  constructor($http, $state,$window) {
-    this.http = $http;
-    this.$state = $state
+  constructor($window,$state,$http) {
     this.user = {};
     this.$window = $window;
+    this.$state = $state;
+    this.$http = $http;
   }
 
   getUserInfo() {
     var data = JSON.parse(this.$window.sessionStorage.getItem('user'));
-    return data.data;
+    return data;
   }
 
   logOff() {
@@ -18,19 +18,17 @@ export default class loginService {
 
   isSignedIn() {
     if(!this.$window.sessionStorage.getItem('user')) {
-    // if(!this.user.isSignedIn) {
       this.$state.go('login');
     }
   }
   setUser(data){
-    console.log(data.data);
     if(data.data.token) {
       this.$window.sessionStorage.setItem('user', angular.toJson(data.data));
     }
   }
 
   loginIn(user) {
-    return this.http({
+    return this.$http({
       method: "POST",
       url: "http://localhost:3300/api/login",
       data: user

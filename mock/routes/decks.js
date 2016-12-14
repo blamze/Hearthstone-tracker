@@ -10,7 +10,8 @@ var dbConfig = {
 var db = pgp(dbConfig);
 var express = require('express');
 var router = express.Router();
-//get all decks
+
+//Get all decks
 router.get('/', function (req, res) {
   db.any("SELECT d.id, c.name as class, c.img as classimg, d.url, d.name FROM decktypes d JOIN classes c on d.classid = c.id WHERE d.isdeleted=false", [])
     .then(function (data) {
@@ -37,43 +38,50 @@ router.get('/:id', function (req, res) {
     });
 });
 
-// // Insert deck
+//Insert deck
 router.post('/new', function (req, res) {
   var data = req.body;
+  if (data.name && data.url && data.classid) {
+    db.one("INSERT INTO decktypes (name, url, classid) VALUES ($1, $2, $3) RETURNING *", [data.name, data.url, data.classid])
+      .then(function () {
+        res.status(200).send("deck added");
+        // success;
+      })
+      .catch(function (error) {
+        res.status(500).send(error.message);
+        // error;
+      });
+  } else {
+    res.status(500).send('No deck name, url or class id');
+  }
 
-  db.one("INSERT INTO decktypes (name, url, classid) VALUES ($1, $2, $3) RETURNING *", [data.name, data.url, data.classid])
-    .then(function (data) {
-      res.status(200).send("ok");
-      // success;
-    })
-    .catch(function (error) {
-      res.status(500).send(error.message);
-      // error;
-    });
 });
 
-// // Update deck
+//Update deck
 router.put('/edit', function (req, res) {
   var data = req.body;
-
-  db.none("UPDATE decktypes SET name=$1, url=$2, classid=$3 WHERE id=$4 and isdeleted=false", [data.name, data.url, data.classid, data.id])
-    .then(function (data) {
-      // success;
-      res.status(200).send("ok");
-    })
-    .catch(function (error) {
-      res.status(500).send(error.message);
-      // error;
-    });
+  if (data.name && data.url && data.classid && data.id) {
+    db.none("UPDATE decktypes SET name=$1, url=$2, classid=$3 WHERE id=$4 and isdeleted=false", [data.name, data.url, data.classid, data.id])
+      .then(function () {
+        // success;
+        res.status(200).send("deck updated");
+      })
+      .catch(function (error) {
+        res.status(500).send(error.message);
+        // error;
+      });
+  } else {
+    res.status(500).send('No deck name, url or class id or deck id');
+  }
 });
 
-// // Delete deck
+//Delete deck
 router.put('/delete', function (req, res) {
   var id = req.body.id;
   if (id !== undefined) {
     db.none("UPDATE decktypes " +
       "SET isdeleted=true WHERE id=$1", [id])
-      .then(function (data) {
+      .then(function () {
         res.sendStatus(200);
         // success;
       })
@@ -81,8 +89,7 @@ router.put('/delete', function (req, res) {
         res.status(500).send(error.message);
         // error;
       });
-  }
-  else {
+  } else {
     res.status(500).send("No ID provided");
   }
 });

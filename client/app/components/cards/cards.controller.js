@@ -19,7 +19,7 @@ class CardsController {
           }
 
         })
-        .catch((error) => {
+        .catch(() => {
           this.cards = {};
           this.error = 'Something went wrong! Try again (maybe that card does not exist)';
         });

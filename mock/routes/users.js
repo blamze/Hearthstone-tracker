@@ -10,7 +10,7 @@ var dbConfig = {
 var db = pgp(dbConfig);
 var express = require('express');
 var router = express.Router();
-
+// Get users
 router.get('/', function (req, res) {
   db.any("SELECT " +
     "u.id, " +
@@ -30,7 +30,7 @@ router.get('/', function (req, res) {
     });
 });
 
-
+//Get highscore
 router.get('/highscore', function (req, res) {
   db.any("SELECT " +
     "u.username, " +
@@ -51,10 +51,8 @@ router.get('/highscore', function (req, res) {
 // Insert user
 router.post('/', function (req, res) {
   var data = req.body;
-
   if (data.username !== '' && data.password !== '' && data.email !== '') {
     db.one("SELECT NOT EXISTS ( SELECT 1 FROM users WHERE email=$1) as exist", [data.email]).then((exist) => {
-      console.log(exist.exist);
       if (exist.exist === true) {
         db.one("INSERT INTO users (username, password, email) " +
           "VALUES ($1, $2, $3) " +
@@ -70,23 +68,20 @@ router.post('/', function (req, res) {
       } else {
         res.status(500).send("User exist with that email");
       }
-
     })
+  } else {
+    res.status(500).send("Insert username, email and password");
   }
-  else {
-    res.status(500).send("Inser username, email and password");
-  }
-
 });
 
 
 // Delete user
 router.delete('/', function (req, res) {
   var data = req.body;
-  if (data && data.id !== undefined) {
+  if (data.id !== undefined) {
     db.none("UPDATE users " +
       "SET isdeleted=true WHERE id=$1", [data.id])
-      .then(function (data) {
+      .then(function () {
         res.sendStatus(200);
         // success;
       })
@@ -94,8 +89,7 @@ router.delete('/', function (req, res) {
         res.status(500).send(error.message);
         // error;
       });
-  }
-  else {
+  } else {
     res.status(500).send("No ID provided");
   }
 });
@@ -103,11 +97,11 @@ router.delete('/', function (req, res) {
 // Update user points
 router.put('/add', function (req, res) {
   var data = req.body;
-  if(data.data) {
+  if (data.data) {
     db.none("UPDATE users SET addedmatches=addedmatches+1 WHERE email=$1 and isdeleted=false", [data.data])
       .then(function (data) {
         // success;
-        res.status(200).send("ok");
+        res.status(200).send("points added");
       })
       .catch(function (error) {
         res.status(500).send(error.message);
@@ -116,7 +110,6 @@ router.put('/add', function (req, res) {
   } else {
     res.status(500).send("No email provided");
   }
-
 });
 
 module.exports = router;
