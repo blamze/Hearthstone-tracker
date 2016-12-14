@@ -3,19 +3,16 @@
 <section>
   <div class="container">
     <h2>Search cards</h2>
-    <ul class="nav nav-pills">
-      <li class="active"><a data-toggle="pill" href="#view">Cards</a></li>
-    </ul>
-
     <div class="tab-content">
-      <div id="view" class="tab-pane fade in active">
-        <input name="findCardInput" class="form-control" type="text" ng-model="find.name">
-        <input class="btn btn-default" type="button" value="Search" ng-click="$ctrl.findCards(find)">
-        <br>
-        <div class="inline" ng-repeat="card in $ctrl.cards | limitTo:12">
-          <div class="cards"><img ng-src="{{card.img}}" alt=""></div>
-        </div>
+      <input name="findCardInput" class="form-control width" type="text" ng-model="find.name">
+      <br>
+      <input class="btn btn-default" type="button" value="Search" ng-click="$ctrl.findCards(find)">
+      <br>
+      <h3 ng-show="$ctrl.error">{{$ctrl.error}}</h3>
+      <div class="inline" ng-repeat="card in $ctrl.cards | limitTo:12">
+        <div class="cards"><img ng-src="{{card.img}}" alt=""></div>
       </div>
+
 
     </div>
   </div>

@@ -27,7 +27,7 @@ router.get('/', function (req, res) {
 router.post('/new', function (req, res) {
   var data = req.body;
 
-  db.one("INSERT INTO classes (name, img) VALUES ($1, $2) RETURNING *", [data.name, data.img])
+  db.one("INSERT INTO classes (name, img, url) VALUES ($1, $2, $3) RETURNING *", [data.name, data.img, data.url])
     .then(function (data) {
       res.status(200).send("ok");
       // success;
@@ -42,7 +42,7 @@ router.post('/new', function (req, res) {
 router.put('/edit', function (req, res) {
   var data = req.body;
 
-  db.none("UPDATE classes SET name=$1, img=$2 WHERE id=$3 and isdeleted=false", [data.name, data.img, data.id])
+  db.none("UPDATE classes SET name=$1, img=$2, url=$3 WHERE id=$4 and isdeleted=false", [data.name, data.img, data.url, data.id])
     .then(function (data) {
       // success;
       res.status(200).send("ok");

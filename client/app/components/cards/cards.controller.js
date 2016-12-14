@@ -2,18 +2,31 @@ class CardsController {
   constructor(cardsService, loginService) {
     this.cardsService = cardsService;
     this.loginService = loginService;
-    this.cards = {};
     this.loginService.isSignedIn();
+    this.cards = {};
+    this.error;
   }
 
   findCards(option) {
-    this.cardsService.getSearchedCard(option.name)
-      .then((data) => {
-        this.cards = data.data;
-      })
-      .catch((error) => {
-        this.error.message = error.data;
-      });
+    if(option !== undefined) {
+      this.cardsService.getSearchedCard(option.name)
+        .then((data) => {
+          if(data.data.length === 0) {
+            this.error = 'There are no cards with that name';
+          } else {
+            this.cards = data.data;
+            this.error = '';
+          }
+
+        })
+        .catch((error) => {
+          this.cards = {};
+          this.error = 'Something went wrong! Try again (maybe that card does not exist)';
+        });
+    } else {
+      this.error = 'Insert card name';
+    }
+
   }
 
 }

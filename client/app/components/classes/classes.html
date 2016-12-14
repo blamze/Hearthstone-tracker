@@ -1,40 +1,44 @@
 <navbar></navbar>
-<h1>Edit-add-delete hearthstone classes</h1>
+<h1>Hearthstone classes</h1>
 <section>
   <div class="container">
     <h2>Choose tab</h2>
     <ul class="nav nav-pills">
-      <li class="active"><a data-toggle="pill" href="#view">Classes</a></li>
-      <li><a data-toggle="pill" href="#add">Add new class</a></li>
-      <li><a data-toggle="pill" href="#edit">Edit class</a></li>
-      <li><a data-toggle="pill" href="#delete">Delete class</a></li>
+      <li class="active"><a ng-click="$ctrl.deleteMessage()" data-toggle="pill" href="#view">Classes</a></li>
+      <li><a ng-click="$ctrl.deleteMessage()" data-toggle="pill" href="#add">Add new class</a></li>
+      <li><a ng-click="$ctrl.deleteMessage()" data-toggle="pill" href="#edit">Edit class</a></li>
+      <li><a ng-click="$ctrl.deleteMessage()" data-toggle="pill" href="#delete">Delete class</a></li>
     </ul>
 
     <div class="tab-content">
       <div id="view" class="tab-pane fade in active">
         <div class="classes" ng-repeat="class in $ctrl.classes | orderBy:'id'">
-          <h3> {{class.id}} {{class.name}} <img ng-src="{{class.img}}" alt=""></h3>
+          <h3>{{class.name}} <img ng-src="{{class.img}}" alt=""> <a ng-href="{{class.url}}">Class info</a></h3>
         </div>
       </div>
 
       <div id="add" class="tab-pane fade">
+        <h3 ng-show="$ctrl.message">{{$ctrl.message}}</h3>
         <h1>Add new class</h1>
         <div class="form-group col-sm-6">
           <form name="addForm">
             <label>Class name:</label>
-            <input name="addNameInput" class="form-control" type="text" ng-model="add.name" required>
+            <input name="addNameInput" class="form-control" type="text" ng-model="$ctrl.add.name" required>
             <p ng-hide="addForm.addNameInput.$valid">Class name is required.</p>
             <label> Class image:</label>
-            <input name="addImgInput" class="form-control" type="text" ng-model="add.img" required>
+            <input name="addImgInput" class="form-control" type="text" ng-model="$ctrl.add.img" required>
             <p ng-hide="addForm.addImgInput.$valid">Class image is required.</p>
+            <label>Class description(url):</label>
+            <input name="addUrlInput" class="form-control" type="text" ng-model="$ctrl.add.url">
             <input class="btn btn-default" ng-disabled="!addForm.myInput.$valid && !addForm.addImgInput.$valid"
                    type="submit"
-                   ng-click="$ctrl.saveClass(add)" value="Add"/>
+                   ng-click="$ctrl.saveClass($ctrl.add)" value="Add"/>
           </form>
         </div>
       </div>
 
       <div id="edit" class="tab-pane fade">
+        <h3 ng-show="$ctrl.message">{{$ctrl.message}}</h3>
         <h1>Edit class</h1>
         <div class="form-group col-sm-6">
           <form name="editForm">
@@ -42,20 +46,21 @@
               name="editClassInput"
               class="sm form-control"
               ng-options="class.id as class.name for class in $ctrl.classes"
-              ng-model="edit.id" placeholder="Select Class" required>
+              ng-model="$ctrl.edit.id" placeholder="Select Class" required>
               <option value="">- Select class -</option>
             </select>
             <p ng-hide="editForm.editClassInput.$valid">Class is required.</p>
             <label>Class name:</label>
-            <input name="editNameInput" class="form-control" type="text" ng-model="edit.name" required>
+            <input name="editNameInput" class="form-control" type="text" ng-model="$ctrl.edit.name" required>
             <p ng-hide="editForm.editNameInput.$valid">Class name is required.</p>
             <label>Class image:</label>
-            <input name="editImgInput" class="form-control" type="text" ng-model="edit.img" required>
+            <input name="editImgInput" class="form-control" type="text" ng-model="$ctrl.edit.img" required>
             <p ng-hide="editForm.editImgInput.$valid">Class image is required.</p>
+            <input name="editUrlInput" class="form-control" type="text" ng-model="$ctrl.edit.url">
             <input
               class="btn btn-default"
               ng-disabled="!addForm.myInput.$valid && !addForm.addImgInput.$valid && !editForm.editClassInput.$valid"
-              type="submit" ng-click="$ctrl.editClass(edit)" value="Edit"/>
+              type="submit" ng-click="$ctrl.editClass($ctrl.edit)" value="Edit"/>
           </form>
         </div>
       </div>
@@ -68,12 +73,12 @@
               name="deleteClassInput"
               class="form-control"
               ng-options="class.id as class.name for class in $ctrl.classes"
-              ng-model="delete.id" placeholder="Select Class" required>
+              ng-model="$ctrl.delete.id" placeholder="Select Class" required>
               <option value="">- Select class -</option>
             </select>
             <p ng-hide="deleteForm.deleteClassInput.$valid">Class is required.</p>
             <input class="btn btn-default" ng-disabled="!deleteForm.deleteClassInput.$valid" type="submit"
-                   ng-click="$ctrl.deleteClass(delete)"
+                   ng-click="$ctrl.deleteClass($ctrl.delete)"
                    value="Delete"/>
           </form>
           <div>

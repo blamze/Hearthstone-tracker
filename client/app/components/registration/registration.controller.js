@@ -2,22 +2,22 @@ class registrationController {
   constructor(usersService, $state) {
     this.usersService = usersService;
     this.$state = $state;
-    this.error = false;
-    this.error2 = false;
+    this.data;
+    this.error;
   };
 
   saveUser(data) {
-    if (data.password === data.repPassword) {
+    if (data.password!== undefined && data.repPassword !== undefined && data.password === data.repPassword) {
       this.usersService.addUser(data).then((data) => {
         if (data.status === 200) {
           this.redirect();
-        } else {
-          this.error2 = true;
         }
-      });
-
+      })
+        .catch((errorMessage) => {
+          this.error = errorMessage.data;
+        });
     } else {
-      this.error = true;
+      this.error = 'Passwords do not match';
     }
 
   }

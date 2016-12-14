@@ -7,16 +7,17 @@
         <li class="active"><a data-toggle="pill" href="#view">Matches</a></li>
         <li><a data-toggle="pill" href="#add">Add new statistic</a></li>
         <li><a data-toggle="pill" href="#winrate">Winrates</a></li>
-        <!--<li><a data-toggle="pill" href="#delete">Delete statistic</a></li>-->
       </ul>
 
       <div class="tab-content">
         <div id="view" class="tab-pane fade in active">
-          <div ng-repeat="x in $ctrl.matches">
+          <dir-pagination-controls></dir-pagination-controls>
+          <div dir-paginate="x in $ctrl.matches | itemsPerPage: 10">
             <img ng-src="{{x.firstclassimg}}" alt="">
             <img ng-src="{{x.secondclassimg}}" alt="">
             <h3>{{x.firstclass}} played against {{x.secondclass}} and {{x.win == true? "won" : "lost"}} </h3>
           </div>
+          <dir-pagination-controls></dir-pagination-controls>
         </div>
 
         <div id="add" class="tab-pane fade">

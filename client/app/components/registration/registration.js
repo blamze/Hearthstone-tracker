@@ -1,6 +1,4 @@
 import angular from 'angular';
-// import stormpath from 'stormpath';
-// import uiRouter from 'angular-ui-router';
 import uiRouter from 'angular-ui-router';
 import registrationComponent from './registration.component';
 

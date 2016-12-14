@@ -18,12 +18,12 @@ router.post('/', function (req, res) {
             .then(function (data) {
                 res.status(200).send({data: data.username, token: chance.hash()});
             })
-            .catch(function (error) {
-                res.status(500).send(error.message);
+            .catch(function () {
+                res.status(500).send("Bad username or password");
             });
     }
     else {
-        res.status(404).send("Invalid username or password");
+        res.status(404).send("Insert username and password");
     }
 });
 
