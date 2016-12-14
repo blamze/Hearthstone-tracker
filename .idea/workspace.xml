@@ -2,207 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b1e08ae-6cdf-4bd5-9f14-ba44a7668156" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/Dockerfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/ISSUE_TEMPLATE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/PULL_REQUEST_TEMPLATE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/angular-chart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/gulpfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/angular-csp.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/angular.min.js.gzip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/angular.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/angular/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.codeclimate.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.eslintignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.eslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.github/ISSUE_TEMPLATE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.github/PULL_REQUEST_TEMPLATE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/MAINTAINING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/config.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/00-Getting-Started.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/01-Chart-Configuration.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/02-Scales.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/03-Line-Chart.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/04-Bar-Chart.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/05-Radar-Chart.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/06-Polar-Area-Chart.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/07-Pie-Doughnut-Chart.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/08-Bubble-Chart.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/09-Advanced.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/docs/10-Notes.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/gulpfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/karma.conf.ci.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/karma.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/karma.coverage.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/animation/progress-bar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/bar/bar-horizontal.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/bar/bar-multi-axis.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/bar/bar-stacked.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/bar/bar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/bubble.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/combo-bar-line.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/data_labelling.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/doughnut.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/legend/pointstyle.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/legend/positions.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/line/different-point-sizes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/line/interpolation-modes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/line/line-multi-axis.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/line/line-skip-points.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/line/line-stacked-area.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/line/line-stepped.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/line/line-styles.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/line/line.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/line/point-styles.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/pie.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/polar-area.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/radar/radar-skip-points.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/radar/radar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/display-settings.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/filtering-labels.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/gridlines.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/line-non-numeric-y.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/linear/min-max-settings.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/linear/step-size.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/linear/suggested-min-max-settings.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/logarithmic/line-logarithmic.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/logarithmic/scatter-logX.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/multiline-labels.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/time/combo-time-scale.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/time/line-time-point-data.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scales/time/line-time-scale.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scatter/scatter-multi-axis.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/scatter/scatter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/tooltips/dataPoints-customTooltips.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/tooltips/interaction-modes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/tooltips/line-customTooltips.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/tooltips/pie-customTooltips.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/tooltips/position-modes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/tooltips/tooltip-callbacks.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/samples/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/scripts/release.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/chart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/charts/Chart.Bar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/charts/Chart.Bubble.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/charts/Chart.Doughnut.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/charts/Chart.Line.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/charts/Chart.PolarArea.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/charts/Chart.Radar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/charts/Chart.Scatter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/controllers/controller.bar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/controllers/controller.bubble.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/controllers/controller.doughnut.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/controllers/controller.line.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/controllers/controller.polarArea.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/controllers/controller.radar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.animation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.canvasHelpers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.datasetController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.element.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.helpers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.interaction.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.layoutService.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.legend.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.plugin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.scale.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.scaleService.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.ticks.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.title.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/core/core.tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/elements/element.arc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/elements/element.line.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/elements/element.point.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/elements/element.rectangle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/scales/scale.category.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/scales/scale.linear.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/scales/scale.linearbase.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/scales/scale.logarithmic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/scales/scale.radialLinear.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/src/scales/scale.time.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/controller.bar.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/controller.bubble.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/controller.doughnut.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/controller.line.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/controller.polarArea.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/controller.radar.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.controller.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.datasetController.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.element.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.helpers.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.interaction.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.layoutService.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.legend.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.plugin.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.scaleService.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.title.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/core.tooltip.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/defaultConfig.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/element.arc.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/element.line.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/element.point.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/element.rectangle.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/mockContext.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/scale.category.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/scale.linear.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/scale.logarithmic.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/scale.radialLinear.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/test/scale.time.tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/chart.js/thankyou.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/.gitmodules" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/TROUBLESHOOTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/protractor.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/test/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower_components/stormpath-sdk-angularjs/test/protractor/login.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/app/background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mock/routes/profile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mock/stormpath.yml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/app.styl" afterPath="$PROJECT_DIR$/client/app/app.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/common/common.styl" afterPath="$PROJECT_DIR$/client/app/common/common.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/cards/cards.controller.js" afterPath="$PROJECT_DIR$/client/app/components/cards/cards.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/classes/classes.html" afterPath="$PROJECT_DIR$/client/app/components/classes/classes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/providers/loginService/login.service.js" afterPath="$PROJECT_DIR$/client/app/providers/loginService/login.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mock/routes/classes.js" afterPath="$PROJECT_DIR$/mock/routes/classes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mock/routes/decks.js" afterPath="$PROJECT_DIR$/mock/routes/decks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mock/routes/login.js" afterPath="$PROJECT_DIR$/mock/routes/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mock/routes/matches.js" afterPath="$PROJECT_DIR$/mock/routes/matches.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mock/routes/users.js" afterPath="$PROJECT_DIR$/mock/routes/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/common/navbar/navbar.html" afterPath="$PROJECT_DIR$/client/app/common/navbar/navbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/common/navbar/navbar.styl" afterPath="$PROJECT_DIR$/client/app/common/navbar/navbar.styl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/registration/registration.controller.js" afterPath="$PROJECT_DIR$/client/app/components/registration/registration.controller.js" />
     </list>
     <ignored path="saityno2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -225,51 +27,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="matches.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mock/routes/matches.js">
+      <file leaf-file-name="login.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/login/login.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
+            <state relative-caret-position="238">
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mock/routes/users.js">
+      <file leaf-file-name="registration.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/registration/registration.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mock/app.js">
+      <file leaf-file-name="registration.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/registration/registration.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classes.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/classes/classes.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="68" column="58" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classes.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/classes/classes.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="238">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -278,50 +62,28 @@
       <file leaf-file-name="navbar.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.controller.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.controller.js">
+      <file leaf-file-name="navbar.styl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+            <state relative-caret-position="102">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/providers/loginService/login.service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.js">
+      <file leaf-file-name="registration.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/registration/registration.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decks.service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/providers/decksService/decks.service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="19" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -337,7 +99,6 @@
       <list>
         <option value="$PROJECT_DIR$/client/app/common/common.js" />
         <option value="$PROJECT_DIR$/client/app/components/classes/classes.styl" />
-        <option value="$PROJECT_DIR$/client/app/common/navbar/navbar.styl" />
         <option value="$PROJECT_DIR$/client/app/providers/classesService/classes.service.js" />
         <option value="$PROJECT_DIR$/client/app/providers/decksService/decks.service.js" />
         <option value="$PROJECT_DIR$/mock/app.js" />
@@ -354,7 +115,6 @@
         <option value="$PROJECT_DIR$/client/app/components/registration/registration.styl" />
         <option value="$PROJECT_DIR$/client/app/components/registration/registration.html" />
         <option value="$PROJECT_DIR$/client/app/components/cards/cards.styl" />
-        <option value="$PROJECT_DIR$/client/app/components/registration/registration.controller.js" />
         <option value="$PROJECT_DIR$/client/app/components/classes/classes.controller.js" />
         <option value="$PROJECT_DIR$/client/app/components/cards/cards.html" />
         <option value="$PROJECT_DIR$/client/app/components/decks/decks.js" />
@@ -368,7 +128,6 @@
         <option value="$PROJECT_DIR$/client/app/components/home/home.html" />
         <option value="$PROJECT_DIR$/client/app/components/highscore/highscore.styl" />
         <option value="$PROJECT_DIR$/client/app/components/highscore/highscore.controller.js" />
-        <option value="$PROJECT_DIR$/client/app/common/navbar/navbar.html" />
         <option value="$PROJECT_DIR$/client/app/providers/usersService/users.service.js" />
         <option value="$PROJECT_DIR$/client/app/components/highscore/highscore.html" />
         <option value="$PROJECT_DIR$/client/app/components/matches/matches.styl" />
@@ -386,6 +145,9 @@
         <option value="$PROJECT_DIR$/client/app/components/classes/classes.html" />
         <option value="$PROJECT_DIR$/client/app/providers/loginService/login.service.js" />
         <option value="$PROJECT_DIR$/client/app/common/navbar/navbar.controller.js" />
+        <option value="$PROJECT_DIR$/client/app/components/registration/registration.controller.js" />
+        <option value="$PROJECT_DIR$/client/app/common/navbar/navbar.html" />
+        <option value="$PROJECT_DIR$/client/app/common/navbar/navbar.styl" />
       </list>
     </option>
   </component>
@@ -466,74 +228,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -553,162 +247,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="usersService" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matchesService" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="loginService" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="decksService" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classesService" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saitynoGIT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cardsService" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -756,7 +294,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
+              <option name="myItemId" value="registration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -916,12 +454,12 @@
       <workItem from="1480262894344" duration="11325000" />
       <workItem from="1481140945797" duration="22577000" />
       <workItem from="1481186010227" duration="4829000" />
-      <workItem from="1481710238650" duration="33762000" />
+      <workItem from="1481710238650" duration="34998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130307000" />
+    <option name="totallyTimeSpent" value="131543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -968,40 +506,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/app/components/classes/classes.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/decks/decks.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/decks/decks.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1077">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/decks/decks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/decks/decks.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1115,14 +619,6 @@
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/login/login.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1332,14 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/providers/decksService/decks.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/classes/classes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1356,20 +844,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.js">
+    <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1382,10 +860,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.controller.js">
+    <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/providers/decksService/decks.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/login/login.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/registration/registration.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/registration/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/registration/registration.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/common/navbar/navbar.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>

@@ -13,8 +13,8 @@ class registrationController {
           this.redirect();
         }
       })
-        .catch((errorMessage) => {
-          this.error = errorMessage.data;
+        .catch(() => {
+          this.error = 'Could not create new account';
         });
     } else {
       this.error = 'Passwords do not match';
