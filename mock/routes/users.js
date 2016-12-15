@@ -49,7 +49,7 @@ router.get('/highscore', function (req, res) {
 });
 
 // Insert user
-router.post('/', function (req, res) {
+router.post('/add', function (req, res) {
   var data = req.body;
   if (data.username !== '' && data.password !== '' && data.email !== '') {
     db.one("SELECT NOT EXISTS ( SELECT 1 FROM users WHERE email=$1) as exist", [data.email]).then((exist) => {
@@ -76,13 +76,13 @@ router.post('/', function (req, res) {
 
 
 // Delete user
-router.delete('/', function (req, res) {
+router.delete('/delete', function (req, res) {
   var data = req.body;
   if (data.id !== undefined) {
     db.none("UPDATE users " +
       "SET isdeleted=true WHERE id=$1", [data.id])
       .then(function () {
-        res.sendStatus(200);
+        res.status(200).send("user deleted");
         // success;
       })
       .catch(function (error) {
@@ -95,13 +95,13 @@ router.delete('/', function (req, res) {
 });
 
 // Update user points
-router.put('/add', function (req, res) {
+router.put('/addpoints', function (req, res) {
   var data = req.body;
   if (data.data) {
     db.none("UPDATE users SET addedmatches=addedmatches+1 WHERE email=$1 and isdeleted=false", [data.data])
       .then(function (data) {
         // success;
-        res.status(200).send("points added");
+        res.status(200).send("point added");
       })
       .catch(function (error) {
         res.status(500).send(error.message);

@@ -66,8 +66,8 @@ router.put('/delete', function (req, res) {
   if (id !== undefined) {
     db.none("UPDATE classes " +
       "SET isdeleted=true WHERE id=$1", [id])
-      .then(function (data) {
-        res.sendStatus(200);
+      .then(function () {
+        res.status(200).send('class deleted');
         // success;
       })
       .catch(function (error) {

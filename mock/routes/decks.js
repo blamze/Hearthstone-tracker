@@ -82,7 +82,7 @@ router.put('/delete', function (req, res) {
     db.none("UPDATE decktypes " +
       "SET isdeleted=true WHERE id=$1", [id])
       .then(function () {
-        res.sendStatus(200);
+        res.status(200).send('deck deleted');
         // success;
       })
       .catch(function (error) {

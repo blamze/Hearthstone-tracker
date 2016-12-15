@@ -19,7 +19,7 @@ export default class usersService {
   addPointsToUser(options) {
     return this.http({
       method: "PUT",
-      url: "http://localhost:3300/api/users/add",
+      url: "http://localhost:3300/api/users/addpoints",
       data: options
     });
   }
@@ -27,7 +27,7 @@ export default class usersService {
   addUser(options) {
     return this.http({
       method: "POST",
-      url: "http://localhost:3300/api/users",
+      url: "http://localhost:3300/api/users/add",
       data: options
     });
   }
