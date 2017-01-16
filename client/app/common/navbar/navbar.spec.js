@@ -1,12 +1,13 @@
 import NavbarModule from './navbar'
 
 describe('Navbar', () => {
-  let $rootScope, $state, $location, $componentController, $compile;
+  let $rootScope, $state, $location, $componentController, $compile, loginService;
 
   beforeEach(window.module(NavbarModule));
 
   beforeEach(inject(($injector) => {
     $rootScope = $injector.get('$rootScope');
+    loginService = $injector.get('loginService');
     $componentController = $injector.get('$componentController');
     $state = $injector.get('$state');
     $location = $injector.get('$location');
@@ -26,7 +27,7 @@ describe('Navbar', () => {
       });
     });
 
-    it('has a name property', () => { // erase if removing this.name from the controller
+    it('has a name property', () => {
       expect(controller).to.have.property('name');
     });
   });
@@ -42,7 +43,7 @@ describe('Navbar', () => {
     });
 
     it('has name in template', () => {
-      expect(template.find('h1').find('a').html()).to.eq('navbar');
+      expect(template.find('a').html()).to.eq('Hearthstone statistics');
     });
 
   });

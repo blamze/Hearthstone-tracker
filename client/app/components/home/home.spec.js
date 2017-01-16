@@ -31,7 +31,7 @@ describe('Home', () => {
       });
     });
 
-    it('has a name property', () => { // erase if removing this.name from the controller
+    it('has a name property', () => {
       expect(controller).to.have.property('name');
     });
   });
