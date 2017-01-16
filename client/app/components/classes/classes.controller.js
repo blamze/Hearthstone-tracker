@@ -3,8 +3,6 @@ class ClassesController {
     this.classesService = classesService;
     this.loginService = loginService;
     this.loginService.isSignedIn();
-    this.classes;
-    this.message;
     this.loadClasses();
   }
 
@@ -24,10 +22,10 @@ class ClassesController {
         this.message = 'New class added';
         this.resetInputs();
         this.loadClasses();
-      }).catch(()=> {
-      this.message = 'Error, something went wrong, try again';
-    });
-  };
+      }).catch(() => {
+        this.message = 'Error, something went wrong, try again';
+      });
+  }
 
   editClass(data) {
     this.classesService.editClass(data)
@@ -35,10 +33,10 @@ class ClassesController {
         this.message = 'Class edited';
         this.resetInputs();
         this.loadClasses();
-      }).catch(()=> {
-      this.message = 'Error, something went wrong, try again';
-    });
-  };
+      }).catch(() => {
+        this.message = 'Error, something went wrong, try again';
+      });
+  }
 
   deleteClass(data) {
     this.classesService.deleteClass(data)
@@ -46,12 +44,12 @@ class ClassesController {
         this.message = 'Class deleted';
         this.resetInputs();
         this.loadClasses();
-      }).catch(()=> {
-      this.message = 'Error, something went wrong, try again';
-    });
-  };
+      }).catch(() => {
+        this.message = 'Error, something went wrong, try again';
+      });
+  }
 
-  deleteMessage(){
+  deleteMessage() {
     this.message = '';
   }
 
